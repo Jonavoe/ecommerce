@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import INICIO from './comoponentes/inicio';
 
-test('Paginas', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+test('inicio', () => {
+  render(<INICIO />);
+  const linkElement = screen.getByText('INICIO');
   expect(linkElement).toBeInTheDocument();
 });
