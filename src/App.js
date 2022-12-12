@@ -17,8 +17,6 @@ function App() {
         </Router>
       </div>
     </DataProvider>
-
-
   );
 }
 

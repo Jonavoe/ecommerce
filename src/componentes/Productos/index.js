@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react'
 import { DataContext } from "../../context/DataProvider";
 import { ProductoItem } from "./ProductoItem";
@@ -12,19 +11,20 @@ export const ProductoLista = () => {
     <>
       <h1 className='title'>PRODUCTOS</h1>
       <div className="productos">
-          {productos.map((producto) => (
-            <ProductoItem
-              key={producto.id}
-              id={producto.id}
-              title={producto.title}
-              price={producto.price}
-              image={producto.image}
-              category={producto.category}
-              cantidad={producto.cantidad}
+        {productos.map((producto) => (
+          <ProductoItem
+            key={producto.id}
+            id={producto.id}
+            title={producto.title}
+            price={producto.price}
+            image={producto.image}
+            category={producto.category}
+            cantidad={producto.cantidad}
 
-            />
-          ))}
-          <ProductoItem />
+          />
+        ))}
+
+        <ProductoItem />
       </div>
     </>
   )
