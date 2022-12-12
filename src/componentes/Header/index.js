@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import Nike from '../../images/Nike.jpg';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (

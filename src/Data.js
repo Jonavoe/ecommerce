@@ -105,7 +105,7 @@ const data = {
       id: 11,
       title: "Nike Air Rubber Dunk Off-White UNC",
       price: 377,
-      image: require('./images/img011.jpg'),
+      image: require('./images/img11.jpg'),
       category: "nike",
       img1: "https://stockx-360.imgix.net/Nike-Air-Rubber-Dunk-Off-White-UNC/Images/Nike-Air-Rubber-Dunk-Off-White-UNC/Lv2/img",
       img2: ".jpg?auto=format,compress&q=90&updated_at=1609438911&w=1000",
