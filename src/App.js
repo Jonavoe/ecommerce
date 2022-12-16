@@ -3,6 +3,7 @@ import { Header } from "./componentes/Header"
 import 'boxicons';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Paginas } from "./componentes/Paginas"
+import { Carrito } from "./componentes/Carrito"
 import { DataProvider } from "./context/DataProvider";
 
 
@@ -13,6 +14,7 @@ function App() {
       <div className="App">
         <Router>
           <Header />
+          <Carrito />
           <Paginas />
         </Router>
       </div>

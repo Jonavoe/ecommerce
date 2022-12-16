@@ -4,6 +4,8 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [productos, setProductos] = useState([])
+  const [menu, setMenu] = useState(false)
+  const [carrito, setCarrito] = useState([])
 
   useEffect(() => {
     const producto = Data.items
@@ -14,13 +16,40 @@ export const DataProvider = (props) => {
     }
   }, [])
 
+  const addCarrito = (id) => {
+    const check = carrito.every(item => {
+      return item.id !== id
+    })
+    if (check) {
+      const data = productos.filter(producto => {
+        return producto.id === id
+      })
+      setCarrito([...carrito, ...data])
+    } else {
+      alert("El producto se ha añadido al carrito")
+    }
+  }
+	useEffect(() => {
+		const carrito = JSON.parse(localStorage.getItem('carrito'));
+		if (carrito) {
+			setCarrito(carrito);
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('carrito', JSON.stringify(carrito));
+	}, [carrito]);
+
   const value = {
-    productos: [productos]
+    productos: [productos],
+    menu: [menu, setMenu],
+    carrito: [carrito, setCarrito],
+    addCarrito: addCarrito,
   }
 
   return (
     <DataContext.Provider value={value} >
-      {props.children }
+      {props.children}
     </DataContext.Provider>
   )
 }
