@@ -8,7 +8,7 @@ export const Header = () => {
 
   const value = useContext(DataContext);
   const [menu, setMenu] = value.menu;
-  const [carrito, setCarrito] = value.carrito;
+  const [carrito] = value.carrito;
 
   const toogleTrue = () => {
     setMenu(!menu)
@@ -25,7 +25,7 @@ export const Header = () => {
           <Link to="/">INICIO</Link>
         </li>
         <li>
-          <a href="/productos">PRODUCTOS</a>
+          <Link to="/productos">PRODUCTOS</Link>
         </li>
       </ul>
       <div className='cart' onClick={toogleTrue}>

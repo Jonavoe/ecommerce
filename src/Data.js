@@ -112,7 +112,7 @@ const data = {
       cantidad: 1
     },
     {
-      id: 11,
+      id: 12,
       title: "Nike Air Rubber Dunk Off-White UNC",
       price: 377,
       image: require('./images/img11.jpg'),

@@ -20,11 +20,8 @@ export const ProductoLista = () => {
             image={producto.image}
             category={producto.category}
             cantidad={producto.cantidad}
-
           />
         ))}
-
-        <ProductoItem />
       </div>
     </>
   )

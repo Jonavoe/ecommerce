@@ -5,7 +5,7 @@ import { DataContext } from "../../context/DataProvider";
 export const Carrito = () => {
     const value = useContext(DataContext);
     const [menu, setMenu] = value.menu
-    const [carrito, setCarrito] = value.carrito
+    const [carrito] = value.carrito
 
     const toogleFalse = () => {
         setMenu(false)
