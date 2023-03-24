@@ -1,15 +1,15 @@
 import React from 'react'
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Inicio } from "./Inicio"
 import { ProductoLista } from "./Productos"
 
 export const Paginas = () => {
   return (
     <section>
-      <Switch>
-        <Route exact path="/" component={Inicio} />
-        <Route exact path="/productos" component={ProductoLista} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/productos" element={<ProductoLista />} />
+      </Routes>
     </section>
   )
 }

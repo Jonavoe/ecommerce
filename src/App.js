@@ -1,25 +1,31 @@
-import React from "react";
-import { Header } from "./componentes/Header"
+import React from 'react';
+import { Header } from './componentes/Header';
 import 'boxicons';
-import { BrowserRouter as Router } from "react-router-dom";
-import { Paginas } from "./componentes/Paginas"
-import { Carrito } from "./componentes/Carrito"
-import { DataProvider } from "./context/DataProvider";
-
-
+import { DataProvider } from './context/DataProvider';
+import { Route, Routes } from 'react-router-dom';
+import { Inicio } from './componentes/Inicio';
+import { Carrito } from './componentes/Carrito';
+import ProductoLista from './componentes/Productos';
 
 function App() {
-  return (
-    <DataProvider>
-      <div className="App">
-        <Router>
-          <Header />
-          <Carrito />
-          <Paginas />
-        </Router>
-      </div>
-    </DataProvider>
-  );
+	return (
+		<DataProvider>
+			<div className='App'>
+				<Header />
+				<Carrito />
+				<Routes>
+					<Route
+						path='/'
+						element={<Inicio />}
+					/>
+					<Route
+						path='/productos'
+						element={<ProductoLista />}
+					/>
+				</Routes>
+			</div>
+		</DataProvider>
+	);
 }
 
 export default App;
