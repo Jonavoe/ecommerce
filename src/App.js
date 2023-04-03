@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header } from './componentes/Header';
 import 'boxicons';
 import { DataProvider } from './context/DataProvider';
 import { Route, Routes } from 'react-router-dom';
-import { Inicio } from './componentes/Inicio';
-import { Carrito } from './componentes/Carrito';
-import ProductoLista from './componentes/Productos';
+import ProductoLista from './componentes/Productos/Producto';
+import Header from './componentes/Header/Header';
+import { Carrito } from './componentes/Carrito/Carrito';
+import { Inicio } from './componentes/Inicio/inicio';
 
 function App() {
 	return (
