@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Data from '../Data';
+import Data from '../Data/Motherboard';
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {

@@ -6,11 +6,12 @@ import ProductoLista from './componentes/Productos/Producto';
 import Header from './componentes/Header/Header';
 import { Carrito } from './componentes/Carrito/Carrito';
 import { Inicio } from './componentes/Inicio/inicio';
+import styles from './App.module.css'
 
 function App() {
 	return (
 		<DataProvider>
-			<div className='App'>
+			<div className={styles.App}>
 				<Header />
 				<Carrito />
 				<Routes>

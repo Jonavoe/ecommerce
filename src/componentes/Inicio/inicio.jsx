@@ -1,17 +1,17 @@
-import React from 'react'
-import Portada from "../../images/inicio.jpg";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styles from './Inicio.module.css';
+import { Motherboard } from '../Carousel/Motherboard/Motherboard';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Teclados } from '../Carousel/Teclados/Teclados';
 
 export const Inicio = () => {
-  return (
-    <div className='inicio'>
-      <Link to="/" >
-        <h1>Inicio</h1>
-      </Link>
-      <Link to="/productos" >
-        <h1>Productos</h1>
-      </Link>
-      <img src={Portada} alt="Inicio"></img>
-    </div>
-  )
-}
+	return (
+		<div className={styles.inicio}>
+			<div>
+				<Motherboard />
+				<Teclados />
+			</div>
+		</div>
+	);
+};
