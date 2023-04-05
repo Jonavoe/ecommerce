@@ -6,7 +6,10 @@ import ProductoLista from './componentes/Productos/Producto';
 import Header from './componentes/Header/Header';
 import { Carrito } from './componentes/Carrito/Carrito';
 import { Inicio } from './componentes/Inicio/inicio';
-import styles from './App.module.css'
+import styles from './App.module.css';
+import { DetailTeclados } from './componentes/Detail/DetailTeclados';
+import { DetailMotherboard } from './componentes/Detail/DetailMotherboard';
+import { DetailMouse } from './componentes/Detail/DetailMouse';
 
 function App() {
 	return (
@@ -22,6 +25,18 @@ function App() {
 					<Route
 						path='/productos'
 						element={<ProductoLista />}
+					/>
+					<Route
+						path='/teclados/:id'
+						element={<DetailTeclados />}
+					/>
+					<Route
+						path='/motherboard/:id'
+						element={<DetailMotherboard />}
+					/>
+					<Route
+						path='/mouse/:id'
+						element={<DetailMouse />}
 					/>
 				</Routes>
 			</div>

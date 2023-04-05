@@ -9,7 +9,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem auto 0;
+	margin: 1rem auto 0;
 	background-color: #ff9900;
 	border-radius: 3rem;
 	max-width: 77%;
@@ -28,20 +28,25 @@
 	width: 18rem;
 }
 
-
 .slick-slide {
 	left: 4rem;
 }
 
 .slick-list {
 	top: 1rem;
-	width:60rem;
+	width: 60rem;
+	height: 16rem;
 }
 
 @media screen and (max-width: 768px) {
 	.slick-list {
-        width: 15rem;
-        }
+		width: 15rem;
+	}
+}
+
+.title {
+	margin: 1rem 0 0 0;
+	color: #ff9900;
 }
 
 /* .slick-prev:before,

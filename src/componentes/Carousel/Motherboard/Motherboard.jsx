@@ -32,12 +32,12 @@ export const Motherboard = () => {
 					src='https://i.postimg.cc/7Z4kS962/BYTE-BUILDERS.png'
 				/>
 			</div>
+			<h1 className='title'>Motherboard</h1>
 			<div className='slider'>
-				<Slider
-					{...settings}>
+				<Slider {...settings}>
 					{data.items.map((item) => (
 						<div key={item.id}>
-							<Link to='/productos'>
+							<Link to={`/motherboard/${item.id}`}>
 								<img
 									src={item.image}
 									alt={item.title}

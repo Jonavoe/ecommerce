@@ -14,5 +14,50 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 10rem;
-	
+}
+
+@media screen and (max-width: 1024px) {
+	.productos {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0;
+		align-items: center;
+		justify-content: center;
+		margin: 2rem;
+	}
+}
+.select {
+	border: 1px solid #ff9900;
+	padding: 1rem;
+	border-radius: 1rem;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #ff9900;
+	letter-spacing: 1px;
+}
+
+.select:focus {
+	color: #ff9900;
+	outline: none;
+	border: 1px solid #ff9900;
+}
+
+.select:hover {
+	color: #ff9900;
+}
+
+.option {
+	color: #ff9900;
+}
+
+.option:checked {
+	background-color: #ff9900/30;
+	border-radius: 1rem;
+	box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
+}
+
+.option:hover {
+	background-color: #ff9900 !important;
+	color: white;
 }

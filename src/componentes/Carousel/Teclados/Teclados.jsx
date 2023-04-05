@@ -26,12 +26,13 @@ export const Teclados = () => {
 	};
 	return (
 		<div className='carouselContainer'>
+		<h1 className='title'>Teclados</h1>
 			<div className='slider'>
 				<Slider
 					{...settings}>
 					{data.items.map((item) => (
 						<div key={item.id}>
-							<Link to='/productos'>
+							<Link to={`/teclados/${item.id}`}>
 								<img
 									src={item.image}
 									alt={item.title}

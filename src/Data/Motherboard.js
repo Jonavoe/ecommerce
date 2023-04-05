@@ -7,8 +7,18 @@ const motherboard = {
 			price: 313050,
 			image:
 				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34912_Mother_Asrock_X670E_Taichi_Carrara_AM5_0877ce6c-grn.jpg',
-			category: 'Mothers',
+			category: 'motherboard',
 			cantidad: 1,
+			cantidadSlotPCIE16x: 2,
+			puertosSATA: 8,
+			salidasHDMI: 1,
+			cantidadSlotM2Totales: 4,
+			placaWifiIntegrada: true,
+			sistemaConexionRGB: ['RGB Header', 'ARGB Header'],
+			placaDeRed: '2.5 Gb/s',
+			puertosUSB32Traseros: 8,
+			puertosUSBTypeC: 2,
+			cantidadSlotM2NVMe: 4
 		},
 		{
 			id: 2,
@@ -16,8 +26,18 @@ const motherboard = {
 			price: 219200,
 			image:
 				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34461_Mother_Asrock_X670E_Steel_Legend_AM5_dcf99a42-grn.jpg',
-			category: 'Mothers',
+			category: 'motherboard',
 			cantidad: 1,
+			cantidadSlotPCIE16x: 2,
+			puertosSATA: 8,
+			salidasHDMI: 1,
+			cantidadSlotM2Totales: 4,
+			placaWifiIntegrada: true,
+			sistemaConexionRGB: ['RGB Header', 'ARGB Header'],
+			placaDeRed: '2.5 Gb/s',
+			puertosUSB32Traseros: 8,
+			puertosUSBTypeC: 2,
+			cantidadSlotM2NVMe: 4
 		},
 		{
 			id: 3,
@@ -25,8 +45,18 @@ const motherboard = {
 			price: 215300,
 			image:
 				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_34451_Mother_Asrock_X670E_PG_LIGHTNING_AM5_59509535-grn.jpg',
-			category: 'Mothers',
+			category: 'motherboard',
 			cantidad: 1,
+			cantidadSlotPCIE16x: 2,
+			puertosSATA: 8,
+			salidasHDMI: 1,
+			cantidadSlotM2Totales: 4,
+			placaWifiIntegrada: true,
+			sistemaConexionRGB: ['RGB Header', 'ARGB Header'],
+			placaDeRed: '2.5 Gb/s',
+			puertosUSB32Traseros: 8,
+			puertosUSBTypeC: 2,
+			cantidadSlotM2NVMe: 4
 		},
 		{
 			id: 4,
@@ -34,8 +64,18 @@ const motherboard = {
 			price: 157700,
 			image:
 				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31320_Mother_ASUS_ROG_STRIX_X570-E_WIFI_II_18a65cf9-grn.jpg',
-			category: 'Mothers',
+			category: 'motherboard',
 			cantidad: 1,
+			cantidadSlotPCIE16x: 2,
+			puertosSATA: 8,
+			salidasHDMI: 1,
+			cantidadSlotM2Totales: 4,
+			placaWifiIntegrada: true,
+			sistemaConexionRGB: ['RGB Header', 'ARGB Header'],
+			placaDeRed: '2.5 Gb/s',
+			puertosUSB32Traseros: 8,
+			puertosUSBTypeC: 2,
+			cantidadSlotM2NVMe: 4
 		},
 		{
 			id: 5,
@@ -43,35 +83,17 @@ const motherboard = {
 			price: 137900,
 			image:
 				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_24405_Mother_ASUS_ROG_STRIX_B550-XE_Gaming_Wifi_AM4_32bf09bc-grn.jpg',
-			category: 'Mothers',
+			category: 'motherboard',
 			cantidad: 1,
-		},
-		{
-			id: 6,
-			title: 'Mother ASUS TUF X570-PRO GAMING WiFi II',
-			price: 117650,
-			image:
-				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31101_Mother_ASUS_TUF_X570-PRO_GAMING_WiFi_II_7e1cdc2d-grn.jpg',
-			category: 'Mothers',
-			cantidad: 1,
-		},
-		{
-			id: 7,
-			title: 'Mother ASUS TUF X570-PLUS GAMING WiFi AM4 PCIe 4.0 Dual M.2',
-			price: 93100,
-			image:
-				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_14393_Mother_ASUS_TUF_X570-PLUS_GAMING_WiFi_AM4_PCIe_4.0_Dual_M.2_1a97a39d-grn.jpg',
-			category: 'Mothers',
-			cantidad: 1,
-		},
-		{
-			id: 8,
-			title: 'Mother ASUS ROG STRIX B550-A Gaming AM4',
-			price: 93100,
-			image:
-				'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_25164_Mother_ASUS_ROG_STRIX_B550-A_Gaming_AM4_d45130a7-grn.jpg',
-			category: 'Mothers',
-			cantidad: 1,
+			cantidadSlotPCIE16x: 2,
+			puertosSATA: 8,
+			salidasHDMI: 1,
+			cantidadSlotM2Totales: 4,
+			sistemaConexionRGB: ['RGB Header', 'ARGB Header'],
+			placaDeRed: '2.5 Gb/s',
+			puertosUSB32Traseros: 8,
+			puertosUSBTypeC: 2,
+			cantidadSlotM2NVMe: 4
 		},
 	],
 };

@@ -11,10 +11,12 @@ export const ProductoItem = ({ id, title, price, image, category }) => {
 		<div className={styles.producto}>
 			<Link href='/'>
 				<div className={styles.producto__img}>
-					<img
-						src={image}
-						alt={title}
-					/>
+					<Link to={`/${category}/${id}`}>
+						<img
+							src={image}
+							alt={title}
+						/>
+					</Link>
 				</div>
 			</Link>
 			<div className={styles.producto__footer}>
@@ -29,7 +31,7 @@ export const ProductoItem = ({ id, title, price, image, category }) => {
 					AÑADIR AL CARRITO
 				</button>
 				<Link
-					href='/'
+					to={`/${category}/${id}`}
 					className={styles.btn}>
 					Vista
 				</Link>

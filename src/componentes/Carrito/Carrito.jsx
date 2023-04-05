@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { DataContext } from '../../context/DataProvider';
+import styles from './Carrito.module.css'
 
 export const Carrito = () => {
 	const value = useContext(DataContext);
@@ -10,8 +11,8 @@ export const Carrito = () => {
 		setMenu(false);
 	};
 
-	const show1 = menu ? 'carritos show' : 'carritos';
-	const show2 = menu ? 'carrito show' : 'carrito';
+	const show1 = menu ? `${styles.carritos} ${styles.show}` : styles.carritos;
+	const show2 = menu ? `${styles.carrito} ${styles.show}` : styles.carrito;
 
 	const aumentarCantidad = (id) => {
 		const updatedCarrito = carrito.map((producto) => {
@@ -56,41 +57,41 @@ export const Carrito = () => {
 		<div className={show1}>
 			<div className={show2}>
 				<div
-					className='carrito__close'
+					className={styles.carrito__close}
 					onClick={toogleFalse}>
 					<box-icon name='x'></box-icon>
 				</div>
 				<h2>Su Carrito</h2>
 
-				<div className='carrito__footer'>
+				<div className={styles.carrito__footer}>
 					<h3>Valor Total: ${valorTotal()}</h3>
-					<button className='btn'>Payment</button>
+					<button className={styles.btn}>Payment</button>
 				</div>
 
-				<div className='carrito__center'>
+				<div className={styles.carrito__center}>
 					{carrito.map((producto) => (
-						<div className='carrito__item'>
+						<div className={styles.carrito__item}>
 							<img
 								src={producto.image}
 								alt={producto.title}
 							/>
 							<div>
 								<h3>Nike Air Force 1 Low CLOT Blue Sil</h3>
-								<p className='price'>{producto.price}</p>
+								<p className={styles.price}>{producto.price}</p>
 							</div>
 							<div>
 								<box-icon
 									name='up-arrow'
 									type='solid'
 									onClick={() => aumentarCantidad(producto.id)}></box-icon>
-								<p className='cantidad'>{producto.cantidad}</p>
+								<p className={styles.cantidad}>{producto.cantidad}</p>
 
 								<box-icon
 									name='down-arrow'
 									type='solid'
 									onClick={() => disminuirCantidad(producto.id)}></box-icon>
 							</div>
-							<div className='remove__item'>
+							<div className={styles.remove__item}>
 								<box-icon
 									onClick={() => value.removeCarrito(producto.id)}
 									name='trash'

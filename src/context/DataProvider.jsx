@@ -1,5 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Data from '../Data/Motherboard';
+import Teclados from '../Data/Teclados';
+import Motherboard from '../Data/Motherboard';
+import Mouse from '../Data/Mouse';
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
@@ -8,8 +10,8 @@ export const DataProvider = (props) => {
 	const [carrito, setCarrito] = useState([]);
 
 	useEffect(() => {
-		const producto = Data.items;
-		if (producto) setProductos(producto);
+		const mergeData = [...Teclados.items, ...Motherboard.items, ...Mouse.items];;
+		if (mergeData) setProductos(mergeData);
 		else setProductos([]);
 	}, []);
 

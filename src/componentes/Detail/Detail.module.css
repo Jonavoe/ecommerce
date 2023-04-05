@@ -1,0 +1,56 @@
+.detail {
+	margin-top: 5rem;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	gap: 5rem;
+	border-radius: 3rem;
+	box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
+}
+
+@media screen and (max-width: 1024px) {
+	.detail {
+		flex-direction: column;
+		margin-top: 2rem;
+		gap: 1rem;
+	}
+}
+.detailImg {
+	border-radius: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.detailImg img {
+		width: 20rem;
+	}
+}
+
+.detailText {
+	max-width: 20rem;
+}
+
+.detailText {
+	color: #ff9900;
+	font-weight: bold;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(	255, 153, 0,.2);
+}
+
+.price {
+    font-size: 2rem;
+    border-bottom: 1px solid rgba(	255, 153, 0,.2);
+}
+.price p {
+    padding: 0;
+    margin: .5rem 0;
+}
+
+.features p {
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
+}
