@@ -1,11 +1,18 @@
+.containerDetail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
 .detail {
 	margin-top: 5rem;
 	justify-content: center;
 	align-items: center;
 	display: flex;
-	gap: 5rem;
-	border-radius: 3rem;
-	box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
+	flex-direction: column;
+	gap: 2rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -13,44 +20,106 @@
 		flex-direction: column;
 		margin-top: 2rem;
 		gap: 1rem;
+		font-size: 0.5rem;
+	}
+}
+.detailPrincipal {
+	display: flex;
+	gap: 5rem;
+}
+@media screen and (max-width: 1024px) {
+	.detailPrincipal {
+		
+		gap: 2rem;
 	}
 }
 .detailImg {
 	border-radius: 3rem;
 }
+.detailImg img {
+	width: 50rem;
+}
 
 @media screen and (max-width: 1024px) {
 	.detailImg img {
-		width: 20rem;
+		width: 10rem;
 	}
 }
 
 .detailText {
 	max-width: 20rem;
-}
-
-.detailText {
 	color: #ff9900;
 	font-weight: bold;
 }
+@media screen and (max-width: 1024px) {
+	.detailText {
+		font-size: 0.5rem;
+	}
+}
+
+.detailFeatures {
+	display: flex;
+	gap: 5rem;
+	color: #ff9900;
+	font-weight: bold;
+	padding: 1rem;
+	
+}
+
+@media screen and (max-width: 1024px) {
+	.detailFeatures {
+		gap: 1rem;
+	}
+}
 
 .title {
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid rgba(	255, 153, 0,.2);
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(255, 153, 0, 0.2);
 }
 
 .price {
-    font-size: 2rem;
-    border-bottom: 1px solid rgba(	255, 153, 0,.2);
+	font-size: 2rem;
+	border-bottom: 1px solid rgba(255, 153, 0, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+	.price {
+		font-size: 1rem;
+	}
+}
+
+.btn {
+	text-align: center;
+	padding: 10px;
+	background-color: #ff9900;
+	border: none;
+	font-size: 1.6rem;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 1rem;
+	font-family: 'Bebas Neue', cursive;
+	margin: 1rem auto;
+	width: 90%;
+}
+
+@media screen and (max-width: 1024px){
+	.btn {
+		font-size: .8rem;
+	}
 }
 .price p {
-    padding: 0;
-    margin: .5rem 0;
+	padding: 0;
+	margin: 0.5rem 0;
 }
 
 .features p {
-    font-size: 1.4rem;
-    padding: 0;
-    margin: 0;
+	font-size: 1.4rem;
+	padding: 0;
+	margin: 0;
+}
+@media screen and (max-width: 1024px) {
+	.features p {
+		font-size: 0.8rem;
+	}
 }

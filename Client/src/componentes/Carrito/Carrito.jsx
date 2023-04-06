@@ -53,6 +53,9 @@ export const Carrito = () => {
         return total;
       };
 
+	  const comprar = () => {
+		alert('Compra realizada con exito')
+	  }
 	return (
 		<div className={show1}>
 			<div className={show2}>
@@ -65,7 +68,7 @@ export const Carrito = () => {
 
 				<div className={styles.carrito__footer}>
 					<h3>Valor Total: ${valorTotal()}</h3>
-					<button className={styles.btn}>Payment</button>
+					<button onClick={comprar} className={styles.btn}>Comprar</button>
 				</div>
 
 				<div className={styles.carrito__center}>
