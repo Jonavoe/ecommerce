@@ -23,7 +23,7 @@ export const Header = () => {
 			<div className={styles.logo}>
 				<Link to='/'>
 					<img
-						src='https://i.postimg.cc/1RwNTrCj/byteR.png'
+						src='https://i.postimg.cc/WzMtDh7W/byteico.png'
 						alt='logo'
 					/>
 				</Link>
