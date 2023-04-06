@@ -4,6 +4,7 @@ import { Motherboard } from '../Carousel/Motherboard/Motherboard';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Teclados } from '../Carousel/Teclados/Teclados';
+import { Mouse } from '../Carousel/Mouse/Mouse';
 
 export const Inicio = () => {
 	return (
@@ -11,6 +12,7 @@ export const Inicio = () => {
 			<div>
 				<Motherboard />
 				<Teclados />
+				<Mouse />
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@
 	border-radius: 2rem;
 	box-shadow: 0 1px 10px #ff9900;
 	background-color: white;
-	margin: 0 10rem;
+	margin: 0 5rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -32,7 +32,7 @@
 
 @media screen and (max-width: 1024px) {
 	.logo img {
-		width: 100px;
+		width: 60px;
 	}
 }
 
@@ -91,6 +91,13 @@ link {
 	height: 45px;
 }
 
+@media screen and (max-width: 1024px) {
+	.cart box-icon {
+		width: 35px;
+		height:35px;
+	}
+}
+
 .cart span {
 	position: absolute;
 	top: -1rem;
@@ -106,6 +113,16 @@ link {
 	font-size: 1.5rem;
 	font-weight: 700;
 	background-color: #ff9900;
+}
+
+@media screen and (max-width: 768px){
+	.cart span {
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1rem;
+		top: -.5rem;
+		right: -.5rem;
+	}
 }
 
 

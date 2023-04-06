@@ -12,7 +12,7 @@
 	margin: 1rem auto 0;
 	background-color: #ff9900;
 	border-radius: 3rem;
-	max-width: 77%;
+	max-width: 93%;
 	width: 100%;
 }
 
@@ -34,7 +34,7 @@
 
 .slick-list {
 	top: 1rem;
-	width: 60rem;
+	width: 100rem;
 	height: 16rem;
 }
 

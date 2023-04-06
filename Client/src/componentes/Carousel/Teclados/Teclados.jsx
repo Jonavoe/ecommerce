@@ -7,7 +7,7 @@ import '../Carousel.css';
 export const Teclados = () => {
 	let settings = {
 		infinite: true,
-		slidesToShow: 3,
+		slidesToShow: 4,
 		speed: 6000,
 		slidesToScroll: 1,
 		autoplay: true,

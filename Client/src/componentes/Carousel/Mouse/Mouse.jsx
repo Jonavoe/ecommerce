@@ -1,13 +1,13 @@
 import React from 'react';
 import Slider from 'react-slick';
-import data from '../../../Data/Motherboard';
+import data from '../../../Data/Mouse';
 import { Link } from 'react-router-dom';
 import '../Carousel.css';
 
-export const Motherboard = () => {
+export const Mouse = () => {
 	let settings = {
 		infinite: true,
-		slidesToShow: 3,
+		slidesToShow: 4,
 		speed: 6000,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -25,19 +25,12 @@ export const Motherboard = () => {
 	};
 	return (
 		<div className='carouselContainer'>
-			<div className='img'>
-				<img
-					alt='banner'
-					className='banner'
-					src='https://i.postimg.cc/7Z4kS962/BYTE-BUILDERS.png'
-				/>
-			</div>
-			<h1 className='title'>Motherboard</h1>
+			<h1 className='title'>Mouse</h1>
 			<div className='slider'>
 				<Slider {...settings}>
 					{data.items.map((item) => (
 						<div key={item.id}>
-							<Link to={`/motherboard/${item.id}`}>
+							<Link to={`/mouse/${item.id}`}>
 								<img
 									src={item.image}
 									alt={item.title}
