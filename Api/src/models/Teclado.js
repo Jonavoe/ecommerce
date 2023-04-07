@@ -1,7 +1,5 @@
-const { DataTypes } = require('sequelize');
-
 module.exports = (database) => {
-	database.define('Teclado', {
+	database.define('teclados', {
 		id: {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
@@ -9,7 +7,6 @@ module.exports = (database) => {
 		},
 		title: {
 			type: DataTypes.STRING,
-			unique: true,
 			allowNull: false,
 		},
 		price: {
@@ -28,29 +25,37 @@ module.exports = (database) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		switchs: {
+		switch: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		teclado: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		color: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		mecanismo: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		switchEspecífico: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		material: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		touchpad: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 		padNumérico: {
 			type: DataTypes.STRING,
+			allowNull: false,
 		},
 	});
 };

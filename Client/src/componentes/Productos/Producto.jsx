@@ -5,23 +5,11 @@ import styles from './Producto.module.css';
 import teclados from '../../Data/Teclados';
 import motherboard from '../../Data/Motherboard';
 import mouse from '../../Data/Mouse';
-const axios = require('axios');
 
 export const ProductoLista = () => {
 	const [selector, setSelector] = useState('Productos');
 	const value = useContext(DataContext);
 	const [productos] = value.productos;
-
-
-
-axios.get('http://localhost:3000/motherboard')
-  .then(response => {
-    const productos = response.data;
-    console.log(productos);
-  })
-  .catch(error => {
-    console.error(error);
-  });
 
 	const handleSelectorChange = (event) => {
 		setSelector(event.target.value);

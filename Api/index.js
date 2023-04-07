@@ -1,8 +1,8 @@
-const server = require('./src/server');
-const { database } = require('./src/db');
+const server = require('./server');
+const { database } = require('./db');
 
 database
-	.sync({ force: true })
+	.sync({ alter: true })
 	.then(() => {
 		server.listen('3001', () => {
 			console.log('Listening on port', 3001);
