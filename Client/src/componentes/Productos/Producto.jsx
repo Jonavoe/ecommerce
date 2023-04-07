@@ -1,46 +1,40 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DataContext } from '../../context/DataProvider';
 import { ProductoItem } from './ProductoItem';
 import styles from './Producto.module.css';
-// import teclados from '../../Data/Teclados';
-// import motherboard from '../../Data/Motherboard';
-// import mouse from '../../Data/Mouse';
-import { findAllProducts } from '../../../../Api/src/controllers/products';
+import teclados from '../../Data/Teclados';
+import motherboard from '../../Data/Motherboard';
+import mouse from '../../Data/Mouse';
+const axios = require('axios');
 
 export const ProductoLista = () => {
 	const [selector, setSelector] = useState('Productos');
 	const value = useContext(DataContext);
 	const [productos] = value.productos;
 
-	const [productosItems, setProductosItems] = useState([]);
 
-	useEffect(() => {
-		async function fetchProductos() {
-			const allProducts = await findAllProducts();
-			setProductosItems(allProducts);
-		}
 
-		fetchProductos();
-	}, []);
+axios.get('http://localhost:3000/motherboard')
+  .then(response => {
+    const productos = response.data;
+    console.log(productos);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 	const handleSelectorChange = (event) => {
 		setSelector(event.target.value);
 	};
 
-	let productosFiltrados = productosItems;
+	let productosFiltrados = productos;
 
 	if (selector === 'Teclados') {
-		productosFiltrados = productosItems.filter(
-			(producto) => producto.category === 'teclados'
-		);
+		productosFiltrados = teclados.items;
 	} else if (selector === 'Motherboard') {
-		productosFiltrados = productosItems.filter(
-			(producto) => producto.category === 'motherboard'
-		);
+		productosFiltrados = motherboard.items;
 	} else if (selector === 'Mouse') {
-		productosFiltrados = productosItems.filter(
-			(producto) => producto.category === 'mouse'
-		);
+		productosFiltrados = mouse.items;
 	}
 
 	return (
