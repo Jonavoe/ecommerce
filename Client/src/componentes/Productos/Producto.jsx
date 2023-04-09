@@ -1,15 +1,46 @@
-import React, { useContext, useState } from 'react';
-import { DataContext } from '../../context/DataProvider';
+import React, { useEffect, useState } from 'react';
 import { ProductoItem } from './ProductoItem';
 import styles from './Producto.module.css';
-import teclados from '../../Data/Teclados';
-import motherboard from '../../Data/Motherboard';
-import mouse from '../../Data/Mouse';
 
 export const ProductoLista = () => {
 	const [selector, setSelector] = useState('Productos');
-	const value = useContext(DataContext);
-	const [productos] = value.productos;
+
+	const [productos, setProductos] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const obtenerTodo = async () => {
+			const productosMotherboards = await obtenerProductos(
+				'http://localhost:3001/motherboards'
+			);
+			productosMotherboards.forEach((producto) => (producto.id));
+			const productosTeclados = await obtenerProductos(
+				'http://localhost:3001/teclados'
+			);
+			productosTeclados.forEach((producto) => (producto.id));
+			const productosMouses = await obtenerProductos(
+				'http://localhost:3001/mouses'
+			);
+			productosMouses.forEach((producto) => (producto.id));
+			const productosOther = await obtenerProductos(
+				'http://localhost:3001/other'
+			);
+			productosMouses.forEach((producto) => (producto.id));
+			setProductos([
+				...productosMotherboards,
+				...productosTeclados,
+				...productosMouses,
+				...productosOther,
+
+			]);
+		};
+		obtenerTodo();
+	}, []);
 
 	const handleSelectorChange = (event) => {
 		setSelector(event.target.value);
@@ -18,11 +49,17 @@ export const ProductoLista = () => {
 	let productosFiltrados = productos;
 
 	if (selector === 'Teclados') {
-		productosFiltrados = teclados.items;
+		productosFiltrados = productos.filter(
+			(producto) => producto.category === 'teclados'
+		);
 	} else if (selector === 'Motherboard') {
-		productosFiltrados = motherboard.items;
+		productosFiltrados = productos.filter(
+			(producto) => producto.category === 'motherboard'
+		);
 	} else if (selector === 'Mouse') {
-		productosFiltrados = mouse.items;
+		productosFiltrados = productos.filter(
+			(producto) => producto.category === 'mouse'
+		);
 	}
 
 	return (

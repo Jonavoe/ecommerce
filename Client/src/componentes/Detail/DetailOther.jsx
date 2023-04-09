@@ -3,10 +3,10 @@ import styles from './Detail.module.css';
 import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../context/DataProvider';
 
-export const DetailMouse = () => {
+export const DetailOther = () => {
 	const { id } = useParams();
 
-	const [mouse, setMouse] = useState([]);
+	const [other, setOther] = useState([]);
 
 	const obtenerProductos = async (url) => {
 		const response = await fetch(url);
@@ -16,10 +16,10 @@ export const DetailMouse = () => {
 
 	useEffect(() => {
 		const fetchProductos = async () => {
-			const productosMouse = await obtenerProductos(
-				`http://localhost:3001/mouses/${id}`
+			const productosOther = await obtenerProductos(
+				`http://localhost:3001/other/${id}`
 			);
-			setMouse(productosMouse);
+			setOther(productosOther);
 		};
 		fetchProductos();
 	}, [id]);
@@ -33,36 +33,24 @@ export const DetailMouse = () => {
 				<div className={styles.detailPrincipal}>
 					<div className={styles.detailImg}>
 						<img
-							src={mouse.image}
-							alt={mouse.title}
+							src={other.image}
+							alt={other.title}
 						/>
 					</div>
 					<div className={styles.detailText}>
 						<div className={styles.title}>
-							<h1>{mouse.title}</h1>
+							<h1>{other.title}</h1>
 						</div>
 						<div className={styles.price}>
-							<p>Precio: ${mouse.price}</p>
+							<p>Precio: ${other.price}</p>
+							<p>Cnatidad: {other.cantidad}</p>
 						</div>
 						<button
 							className={styles.btn}
-							onClick={() => addCarrito(mouse.id)}>
+							onClick={() => addCarrito(other.id)}>
 							AÑADIR AL CARRITO
 						</button>
 					</div>
-				</div>
-			</div>
-			<div className={styles.detailFeatures}>
-				<div className={styles.features}>
-					<p>Cnatidad: {mouse.cantidad}</p>
-					<p>Color: {mouse.color}</p>
-					<p>Cantidad de botones: {mouse.cantidadDeBotones}</p>
-					<p>Tipo de Switch: {mouse.tipDeSwitch}</p>
-				</div>
-				<div className={styles.features}>
-					<p>Tipo de sensor: {mouse.tipoDeSensor}</p>
-					<p>Tipo de Switch especifico:{mouse.tipoInalámbrico}</p>
-					<p>Orientacion: {mouse.orientacion}</p>
 				</div>
 			</div>
 		</div>

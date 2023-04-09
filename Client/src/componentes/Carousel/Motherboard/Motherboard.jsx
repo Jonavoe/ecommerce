@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import data from '../../../Data/Motherboard';
 import { Link } from 'react-router-dom';
 import '../Carousel.css';
 
 export const Motherboard = () => {
+
+	const [productos, setProductos] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const fetchProductos = async () => {
+			const productosMotherboards = await obtenerProductos(
+				'http://localhost:3001/motherboards'
+			);
+			setProductos(productosMotherboards);
+		};
+		fetchProductos();
+	}, []);
+
 	let settings = {
 		infinite: true,
 		slidesToShow: 4,
@@ -35,7 +53,7 @@ export const Motherboard = () => {
 			<h1 className='title'>Motherboard</h1>
 			<div className='slider'>
 				<Slider {...settings}>
-					{data.items.map((item) => (
+					{productos.map((item) => (
 						<div key={item.id}>
 							<Link to={`/motherboard/${item.id}`}>
 								<img

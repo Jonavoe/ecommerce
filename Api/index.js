@@ -1,5 +1,5 @@
-const server = require('./server');
-const { database } = require('./db');
+const server = require('./src/server');
+const { database } = require('./src/db');
 
 database
 	.sync({ alter: true })

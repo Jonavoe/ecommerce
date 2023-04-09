@@ -9,7 +9,6 @@ export const ProductoItem = ({ id, title, price, image, category }) => {
 
 	return (
 		<div className={styles.producto}>
-			<Link href='/'>
 				<div className={styles.producto__img}>
 					<Link to={`/${category}/${id}`}>
 						<img
@@ -18,7 +17,6 @@ export const ProductoItem = ({ id, title, price, image, category }) => {
 						/>
 					</Link>
 				</div>
-			</Link>
 			<div className={styles.producto__footer}>
 				<h1> {title}</h1>
 				<p> {category} </p>

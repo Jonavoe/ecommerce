@@ -10,6 +10,11 @@ import styles from './App.module.css';
 import { DetailTeclados } from './componentes/Detail/DetailTeclados';
 import { DetailMotherboard } from './componentes/Detail/DetailMotherboard';
 import { DetailMouse } from './componentes/Detail/DetailMouse';
+import CreateMotherboard from './componentes/CreateProduct/CreateMotherboard';
+import CreateTeclado from './componentes/CreateProduct/CreateTeclado';
+import CreateMouse from './componentes/CreateProduct/CreateMouse';
+import { DetailOther } from './componentes/Detail/DetailOther';
+import CreateOther from './componentes/CreateProduct/CreateOther';
 
 function App() {
 	return (
@@ -27,6 +32,22 @@ function App() {
 						element={<ProductoLista />}
 					/>
 					<Route
+						path='/createTeclado'
+						element={<CreateTeclado />}
+					/>
+					<Route
+						path='/createMouse'
+						element={<CreateMouse />}
+					/>
+					<Route
+						path='/createOther'
+						element={<CreateOther />}
+					/>
+					<Route
+						path='/createMotherboard'
+						element={<CreateMotherboard />}
+					/>
+					<Route
 						path='/teclados/:id'
 						element={<DetailTeclados />}
 					/>
@@ -37,6 +58,10 @@ function App() {
 					<Route
 						path='/mouse/:id'
 						element={<DetailMouse />}
+					/>
+					<Route
+						path='/other/:id'
+						element={<DetailOther />}
 					/>
 				</Routes>
 			</div>

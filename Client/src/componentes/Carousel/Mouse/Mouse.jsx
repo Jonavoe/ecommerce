@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import data from '../../../Data/Mouse';
 import { Link } from 'react-router-dom';
 import '../Carousel.css';
 
 export const Mouse = () => {
+	const [mouses, setMouses] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const fetchProductos = async () => {
+			const productosMouses = await obtenerProductos(
+				'http://localhost:3001/mouses'
+			);
+			setMouses(productosMouses);
+		};
+		fetchProductos();
+	}, []);
+
 	let settings = {
 		infinite: true,
 		slidesToShow: 4,
@@ -28,7 +45,7 @@ export const Mouse = () => {
 			<h1 className='title'>Mouse</h1>
 			<div className='slider'>
 				<Slider {...settings}>
-					{data.items.map((item) => (
+					{mouses.map((item) => (
 						<div key={item.id}>
 							<Link to={`/mouse/${item.id}`}>
 								<img

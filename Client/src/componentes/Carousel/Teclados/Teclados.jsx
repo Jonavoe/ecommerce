@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
-import data from '../../../Data/Teclados';
 import { Link } from 'react-router-dom';
 import '../Carousel.css';
 
 export const Teclados = () => {
+
+	const [teclados, setTeclados] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const fetchProductos = async () => {
+			const productosTeclados = await obtenerProductos(
+				'http://localhost:3001/teclados'
+			);
+			setTeclados(productosTeclados);
+		};
+		fetchProductos();
+	}, []);
+
 	let settings = {
 		infinite: true,
 		slidesToShow: 4,
@@ -30,7 +48,7 @@ export const Teclados = () => {
 			<div className='slider'>
 				<Slider
 					{...settings}>
-					{data.items.map((item) => (
+					{teclados.map((item) => (
 						<div key={item.id}>
 							<Link to={`/teclados/${item.id}`}>
 								<img

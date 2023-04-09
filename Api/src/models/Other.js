@@ -1,10 +1,9 @@
 const { v4: uuidv4 } = require('uuid');
-
 const { DataTypes } = require('sequelize');
 
 module.exports = (database) => {
 	database.define(
-		'Motherboards',
+		'Other',
 		{
 			id: {
 				type: DataTypes.UUID,
@@ -14,6 +13,7 @@ module.exports = (database) => {
 			},
 			title: {
 				type: DataTypes.STRING,
+				unique: true,
 				allowNull: false,
 			},
 			price: {
@@ -31,36 +31,6 @@ module.exports = (database) => {
 			cantidad: {
 				type: DataTypes.INTEGER,
 				allowNull: false,
-			},
-			cantidadSlotPCIE16x: {
-				type: DataTypes.INTEGER,
-			},
-			puertosSATA: {
-				type: DataTypes.INTEGER,
-			},
-			salidasHDMI: {
-				type: DataTypes.INTEGER,
-			},
-			cantidadSlotM2Totales: {
-				type: DataTypes.INTEGER,
-			},
-			placaWifiIntegrada: {
-				type: DataTypes.STRING,
-			},
-			sistemaConexionRGB: {
-				type: DataTypes.STRING,
-			},
-			placaDeRed: {
-				type: DataTypes.STRING,
-			},
-			puertosUSB32Traseros: {
-				type: DataTypes.INTEGER,
-			},
-			puertosUSBTypeC: {
-				type: DataTypes.INTEGER,
-			},
-			cantidadSlotM2NVMe: {
-				type: DataTypes.INTEGER,
 			},
 		},
 		{

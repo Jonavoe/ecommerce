@@ -1,53 +1,71 @@
 import { useParams } from 'react-router-dom';
-import teclados from '../../Data/Teclados';
 import styles from './Detail.module.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../context/DataProvider';
 
 export const DetailTeclados = () => {
 	const { id } = useParams();
-	const product = teclados.items.find((item) => item.id === parseInt(id));
+	const [teclados, setTeclados] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const fetchProductos = async () => {
+			const productosTeclados = await obtenerProductos(
+				`http://localhost:3001/teclados/${id}`
+			);
+			setTeclados(productosTeclados);
+		};
+		fetchProductos();
+	}, [id]);
+
 	const value = useContext(DataContext);
 	const addCarrito = value.addCarrito;
-
+	console.log(teclados);
 	return (
 		<div className={styles.containerDetail}>
 			<div className={styles.detail}>
 				<div className={styles.detailPrincipal}>
 					<div className={styles.detailImg}>
 						<img
-							src={product.image}
-							alt={product.title}
+							src={teclados.image}
+							alt={teclados.title}
 						/>
 					</div>
 					<div className={styles.detailText}>
 						<div className={styles.title}>
-							<h1>{product.title}</h1>
+							<h1>{teclados.title}</h1>
 						</div>
 						<div className={styles.price}>
-							<p>Precio: ${product.price}</p>
+							<p>Precio: ${teclados.price}</p>
 						</div>
-						<button
-							className={styles.btn}
-							onClick={() => addCarrito(product.id)}>
-							AÑADIR AL CARRITO
-						</button>
+						{teclados && (
+							<button
+								className={styles.btn}
+								onClick={() => addCarrito(teclados.id)}>
+								AÑADIR AL CARRITO
+							</button>
+						)}
 					</div>
 				</div>
 			</div>
 			<div className={styles.detailFeatures}>
 				<div className={styles.features}>
-					<p>Cantidad: {product.cantidad}</p>
-					<p>Switch: {product.switch}</p>
-					<p>Teclado: {product.teclado}</p>
-					<p>Color: {product.color}</p>
-					<p>Tipo de mecanismo: {product.mecanismo}</p>
+					<p>Cantidad: {teclados.cantidad}</p>
+					<p>Switch: {teclados.switch}</p>
+					<p>Teclado: {teclados.teclado}</p>
+					<p>Color: {teclados.color}</p>
+					<p>Tipo de mecanismo: {teclados.mecanismo}</p>
 				</div>
 				<div className={styles.features}>
-					<p>Tipo de Switch especifico:{product.switchEspecífico}</p>
-					<p>Material: {product.material}</p>
-					<p>Touchpad: {product.touchpad}</p>
-					<p>Pad numerico: {product.padNumérico}</p>
+					<p>Tipo de Switch especifico: {teclados.switchEspecífico}</p>
+					<p>Material: {teclados.material}</p>
+					<p>Touchpad: {teclados.touchpad}</p>
+					<p>Pad numérico: {teclados.padNumérico}</p>
 				</div>
 			</div>
 		</div>

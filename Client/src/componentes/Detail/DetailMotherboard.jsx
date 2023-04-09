@@ -1,12 +1,28 @@
 import { useParams } from 'react-router-dom';
-import motherboard from '../../Data/Motherboard';
 import styles from './Detail.module.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../context/DataProvider';
 
 export const DetailMotherboard = () => {
 	const { id } = useParams();
-	const product = motherboard.items.find((item) => item.id === parseInt(id));
+
+	const [motherboard, setMotherboard] = useState([]);
+
+	const obtenerProductos = async (url) => {
+		const response = await fetch(url);
+		const data = await response.json();
+		return data;
+	};
+
+	useEffect(() => {
+		const fetchProductos = async () => {
+			const productosMotherboard = await obtenerProductos(
+				`http://localhost:3001/motherboards/${id}`
+			);
+			setMotherboard(productosMotherboard);
+		};
+		fetchProductos();
+	}, [id]);
 	const value = useContext(DataContext);
 	const addCarrito = value.addCarrito;
 
@@ -16,20 +32,20 @@ export const DetailMotherboard = () => {
 				<div className={styles.detailPrincipal}>
 					<div className={styles.detailImg}>
 						<img
-							src={product.image}
-							alt={product.title}
+							src={motherboard.image}
+							alt={motherboard.title}
 						/>
 					</div>
 					<div className={styles.detailText}>
 						<div className={styles.title}>
-							<h1>{product.title}</h1>
+							<h1>{motherboard.title}</h1>
 						</div>
 						<div className={styles.price}>
-							<p>Precio: ${product.price}</p>
+							<p>Precio: ${motherboard.price}</p>
 						</div>
 						<button
 							className={styles.btn}
-							onClick={() => addCarrito(product.id)}>
+							onClick={() => addCarrito(motherboard.id)}>
 							AÑADIR AL CARRITO
 						</button>
 					</div>
@@ -37,17 +53,17 @@ export const DetailMotherboard = () => {
 			</div>
 			<div className={styles.detailFeatures}>
 				<div className={styles.features}>
-					<p>Cantidad: {product.cantidad}</p>
-					<p>Cantidad Slot PCIE16x: {product.cantidadSlotPCIE16x}</p>
-					<p>Salidas HDMI: {product.salidasHDMI}</p>
-					<p>Cantidad Slot M2 Totales: {product.cantidadSlotM2Totales}</p>
-					<p>Sistema Conexion RGB: {product.sistemaConexionRGB}</p>
+					<p>Cantidad: {motherboard.cantidad}</p>
+					<p>Cantidad Slot PCIE16x: {motherboard.cantidadSlotPCIE16x}</p>
+					<p>Salidas HDMI: {motherboard.salidasHDMI}</p>
+					<p>Cantidad Slot M2 Totales: {motherboard.cantidadSlotM2Totales}</p>
+					<p>Sistema Conexion RGB: {motherboard.sistemaConexionRGB}</p>
 				</div>
 				<div className={styles.features}>
-					<p>placa De Red:{product.placaDeRed}</p>
-					<p>Puertos USB32 Traseros: {product.puertosUSB32Traseros}</p>
-					<p>Puertos USB Type C: {product.puertosUSBTypeC}</p>
-					<p>Cantidad Slot M2 NVMe: {product.cantidadSlotM2NVMe}</p>
+					<p>placa De Red:{motherboard.placaDeRed}</p>
+					<p>Puertos USB32 Traseros: {motherboard.puertosUSB32Traseros}</p>
+					<p>Puertos USB Type C: {motherboard.puertosUSBTypeC}</p>
+					<p>Cantidad Slot M2 NVMe: {motherboard.cantidadSlotM2NVMe}</p>
 				</div>
 			</div>
 		</div>

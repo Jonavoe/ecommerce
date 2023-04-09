@@ -1,12 +1,17 @@
+const { v4: uuidv4 } = require('uuid');
+const { DataTypes } = require('sequelize');
+
 module.exports = (database) => {
-	database.define('teclados', {
+	database.define('Teclado', {
 		id: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.UUID,
+			defaultValue: () => uuidv4(),
 			primaryKey: true,
-			autoIncrement: true,
+			allowNull: false,
 		},
 		title: {
 			type: DataTypes.STRING,
+			unique: true,
 			allowNull: false,
 		},
 		price: {
@@ -25,37 +30,29 @@ module.exports = (database) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		switch: {
+		switchs: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		teclado: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		color: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		mecanismo: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		switchEspecífico: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		material: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		touchpad: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 		padNumérico: {
 			type: DataTypes.STRING,
-			allowNull: false,
 		},
 	});
 };

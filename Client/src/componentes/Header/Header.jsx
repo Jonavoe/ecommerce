@@ -44,6 +44,13 @@ export const Header = () => {
 							PRODUCTOS
 						</Link>
 					</li>
+					<li>
+						<Link
+							className={styles.link}
+							to='/CreateMotherboard'>
+							AÑADIR
+						</Link>
+					</li>
 				</ul>
 			</div>
 			<div
