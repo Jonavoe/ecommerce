@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
-import { useContext, useEffect, useState } from 'react';
-import { DataContext } from '../../context/DataProvider';
+import { useEffect, useState } from 'react';
 
 export const DetailMotherboard = () => {
 	const { id } = useParams();
@@ -23,8 +22,9 @@ export const DetailMotherboard = () => {
 		};
 		fetchProductos();
 	}, [id]);
-	const value = useContext(DataContext);
-	const addCarrito = value.addCarrito;
+	const addCarrito = () => {
+		console.log('agregar carrito');
+	};
 
 	return (
 		<div className={styles.containerDetail}>
@@ -45,7 +45,7 @@ export const DetailMotherboard = () => {
 						</div>
 						<button
 							className={styles.btn}
-							onClick={() => addCarrito(motherboard.id)}>
+							onClick={() => addCarrito()}>
 							AÑADIR AL CARRITO
 						</button>
 					</div>

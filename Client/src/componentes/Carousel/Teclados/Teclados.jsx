@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '../Carousel.css';
 
 export const Teclados = () => {
-
 	const [teclados, setTeclados] = useState([]);
 
 	const obtenerProductos = async (url) => {
@@ -25,7 +24,7 @@ export const Teclados = () => {
 
 	let settings = {
 		infinite: true,
-		slidesToShow: 4,
+		slidesToShow: 2,
 		speed: 6000,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -44,10 +43,9 @@ export const Teclados = () => {
 	};
 	return (
 		<div className='carouselContainer'>
-		<h1 className='title'>Teclados</h1>
+			<h1 className='title'>Teclados</h1>
 			<div className='slider'>
-				<Slider
-					{...settings}>
+				<Slider {...settings}>
 					{teclados.map((item) => (
 						<div key={item.id}>
 							<Link to={`/teclados/${item.id}`}>

@@ -200,7 +200,7 @@ function CreateTeclado() {
 					<input
 						type='text'
 						name='switchEspecifico'
-						value={formData.switchEspecifico}
+						value={formData.switchEspecífico}
 						onChange={handleChange}
 					/>
 				</label>

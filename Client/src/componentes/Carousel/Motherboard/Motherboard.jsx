@@ -24,8 +24,10 @@ export const Motherboard = () => {
 	}, []);
 
 	let settings = {
+		centerMode: true,
+		centerPadding:'200px',
 		infinite: true,
-		slidesToShow: 4,
+		slidesToShow: 3,
 		speed: 6000,
 		slidesToScroll: 1,
 		autoplay: true,

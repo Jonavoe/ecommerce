@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
-import { useContext, useEffect, useState } from 'react';
-import { DataContext } from '../../context/DataProvider';
+import { useEffect, useState } from 'react';
 
 export const DetailTeclados = () => {
 	const { id } = useParams();
@@ -23,9 +22,9 @@ export const DetailTeclados = () => {
 		fetchProductos();
 	}, [id]);
 
-	const value = useContext(DataContext);
-	const addCarrito = value.addCarrito;
-	console.log(teclados);
+	const addCarrito = () => {
+		console.log('agregar carrito');
+	};
 	return (
 		<div className={styles.containerDetail}>
 			<div className={styles.detail}>
@@ -46,7 +45,7 @@ export const DetailTeclados = () => {
 						{teclados && (
 							<button
 								className={styles.btn}
-								onClick={() => addCarrito(teclados.id)}>
+								onClick={() => addCarrito()}>
 								AÑADIR AL CARRITO
 							</button>
 						)}

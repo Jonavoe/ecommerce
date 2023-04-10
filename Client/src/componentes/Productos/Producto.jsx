@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ProductoItem } from './ProductoItem';
 import styles from './Producto.module.css';
 
-export const ProductoLista = () => {
+export const ProductoLista = ({ agregarAlCarrito }) => {
 	const [selector, setSelector] = useState('Productos');
 
 	const [productos, setProductos] = useState([]);
@@ -18,29 +18,49 @@ export const ProductoLista = () => {
 			const productosMotherboards = await obtenerProductos(
 				'http://localhost:3001/motherboards'
 			);
-			productosMotherboards.forEach((producto) => (producto.id));
+			productosMotherboards.forEach((producto) => producto.id);
 			const productosTeclados = await obtenerProductos(
 				'http://localhost:3001/teclados'
 			);
-			productosTeclados.forEach((producto) => (producto.id));
+			productosTeclados.forEach((producto) => producto.id);
 			const productosMouses = await obtenerProductos(
 				'http://localhost:3001/mouses'
 			);
-			productosMouses.forEach((producto) => (producto.id));
+			productosMouses.forEach((producto) => producto.id);
 			const productosOther = await obtenerProductos(
 				'http://localhost:3001/other'
 			);
-			productosMouses.forEach((producto) => (producto.id));
+			productosMouses.forEach((producto) => producto.id);
 			setProductos([
 				...productosMotherboards,
 				...productosTeclados,
 				...productosMouses,
 				...productosOther,
-
 			]);
 		};
 		obtenerTodo();
 	}, []);
+
+	const eliminarProducto = async (id, category) => {
+		const url = `http://localhost:3001/${category}/${id}`;
+		try {
+			const response = await fetch(url, {
+				method: 'DELETE',
+			});
+			if (response.ok) {
+				const nuevosProductos = productos.filter(
+					(producto) => producto.id !== id
+				);
+				setProductos(nuevosProductos);
+				alert('Producto eliminado correctamente');
+			} else {
+				throw new Error(`Error eliminando producto con ID ${id}`);
+			}
+		} catch (error) {
+			console.error(error);
+			alert(`Error eliminando producto con ID ${id}`);
+		}
+	};
 
 	const handleSelectorChange = (event) => {
 		setSelector(event.target.value);
@@ -103,6 +123,8 @@ export const ProductoLista = () => {
 						image={producto.image}
 						category={producto.category}
 						cantidad={producto.cantidad}
+						agregarAlCarrito={agregarAlCarrito}
+						eliminarProducto={eliminarProducto}
 					/>
 				))}
 			</div>
@@ -111,3 +133,83 @@ export const ProductoLista = () => {
 };
 
 export default ProductoLista;
+
+// const eliminarMotherboard = async (id) => {
+// 	try {
+// 		const response = await fetch(`http://localhost:3001/motherboards/${id}`, {
+// 			method: 'DELETE',
+// 		});
+// 		if (response.ok) {
+// 			const nuevosProductos = productos.filter(
+// 				(producto) => producto.id !== id
+// 			);
+// 			setProductos(nuevosProductos);
+// 			alert('Producto eliminado correctamente');
+// 		} else {
+// 			throw new Error(`Error eliminando producto con ID ${id}`);
+// 		}
+// 	} catch (error) {
+// 		console.error(error);
+// 		alert(`Error eliminando producto con ID ${id}`);
+// 	}
+// };
+
+// const eliminarMouse = async (id) => {
+// 	try {
+// 		const response = await fetch(`http://localhost:3001/mouses/${id}`, {
+// 			method: 'DELETE',
+// 		});
+// 		if (response.ok) {
+// 			const nuevosProductos = productos.filter(
+// 				(producto) => producto.id !== id
+// 			);
+// 			setProductos(nuevosProductos);
+// 			alert('Producto eliminado correctamente');
+// 		} else {
+// 			throw new Error(`Error eliminando producto con ID ${id}`);
+// 		}
+// 	} catch (error) {
+// 		console.error(error);
+// 		alert(`Error eliminando producto con ID ${id}`);
+// 	}
+// };
+
+// const eliminarTeclado = async (id) => {
+// 	try {
+// 		const response = await fetch(`http://localhost:3001/teclados/${id}`, {
+// 			method: 'DELETE',
+// 		});
+// 		if (response.ok) {
+// 			const nuevosProductos = productos.filter(
+// 				(producto) => producto.id !== id
+// 			);
+// 			setProductos(nuevosProductos);
+// 			alert('Producto eliminado correctamente');
+// 		} else {
+// 			throw new Error(`Error eliminando producto con ID ${id}`);
+// 		}
+// 	} catch (error) {
+// 		console.error(error);
+// 		alert(`Error eliminando producto con ID ${id}`);
+// 	}
+// };
+
+// const eliminarOther = async (id) => {
+// 	try {
+// 		const response = await fetch(`http://localhost:3001/others/${id}`, {
+// 			method: 'DELETE',
+// 		});
+// 		if (response.ok) {
+// 			const nuevosProductos = productos.filter(
+// 				(producto) => producto.id !== id
+// 			);
+// 			setProductos(nuevosProductos);
+// 			alert('Producto eliminado correctamente');
+// 		} else {
+// 			throw new Error(`Error eliminando producto con ID ${id}`);
+// 		}
+// 	} catch (error) {
+// 		console.error(error);
+// 		alert(`Error eliminando producto con ID ${id}`);
+// 	}
+// };

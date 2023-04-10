@@ -1,6 +1,5 @@
 require('dotenv').config();
-
-const { USER, PASSWORD, HOST, PORT, BDD } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_BDD } = process.env;
 const { Sequelize } = require('sequelize');
 const Mouses = require('./models/Mouses');
 const Motherboards = require('./models/Motherboards');
@@ -8,7 +7,7 @@ const Teclado = require('./models/Teclado');
 const Other = require('./models/Other');
 
 const database = new Sequelize(
-	`postgres://${USER}:${PASSWORD}@${HOST}:${PORT}/${BDD}`,
+	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_BDD}`,
 	{ logging: false }
 );
 

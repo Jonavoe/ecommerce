@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'boxicons';
-import { DataProvider } from './context/DataProvider';
 import { Route, Routes } from 'react-router-dom';
 import ProductoLista from './componentes/Productos/Producto';
 import Header from './componentes/Header/Header';
@@ -17,55 +16,74 @@ import { DetailOther } from './componentes/Detail/DetailOther';
 import CreateOther from './componentes/CreateProduct/CreateOther';
 
 function App() {
+	const [menu, setMenu] = useState(false);
+	const [carrito, setCarrito] = useState([]);
+
+	const agregarAlCarrito = (producto) => {
+		setCarrito([...carrito, producto]);
+	};
+
+	const functionToggle = () => {
+		setMenu(!menu);
+	};
+
+	const toggleMenu = menu ? true : false;
+
 	return (
-		<DataProvider>
-			<div className={styles.App}>
-				<Header />
-				<Carrito />
-				<Routes>
-					<Route
-						path='/'
-						element={<Inicio />}
-					/>
-					<Route
-						path='/productos'
-						element={<ProductoLista />}
-					/>
-					<Route
-						path='/createTeclado'
-						element={<CreateTeclado />}
-					/>
-					<Route
-						path='/createMouse'
-						element={<CreateMouse />}
-					/>
-					<Route
-						path='/createOther'
-						element={<CreateOther />}
-					/>
-					<Route
-						path='/createMotherboard'
-						element={<CreateMotherboard />}
-					/>
-					<Route
-						path='/teclados/:id'
-						element={<DetailTeclados />}
-					/>
-					<Route
-						path='/motherboard/:id'
-						element={<DetailMotherboard />}
-					/>
-					<Route
-						path='/mouse/:id'
-						element={<DetailMouse />}
-					/>
-					<Route
-						path='/other/:id'
-						element={<DetailOther />}
-					/>
-				</Routes>
-			</div>
-		</DataProvider>
+		<div className={styles.App}>
+			<Header
+				functionToggle={functionToggle}
+				carrito={carrito}
+			/>
+			<Carrito
+				functionToggle={functionToggle}
+				toggleMenu={toggleMenu}
+				carrito={carrito}
+				setCarrito={setCarrito}
+			/>
+			<Routes>
+				<Route
+					path='/'
+					element={<Inicio />}
+				/>
+				<Route
+					path='/productos'
+					element={<ProductoLista agregarAlCarrito={agregarAlCarrito} />}
+				/>
+				<Route
+					path='/createTeclado'
+					element={<CreateTeclado />}
+				/>
+				<Route
+					path='/createMouse'
+					element={<CreateMouse />}
+				/>
+				<Route
+					path='/createOther'
+					element={<CreateOther />}
+				/>
+				<Route
+					path='/createMotherboard'
+					element={<CreateMotherboard />}
+				/>
+				<Route
+					path='/teclados/:id'
+					element={<DetailTeclados />}
+				/>
+				<Route
+					path='/motherboard/:id'
+					element={<DetailMotherboard />}
+				/>
+				<Route
+					path='/mouse/:id'
+					element={<DetailMouse />}
+				/>
+				<Route
+					path='/other/:id'
+					element={<DetailOther />}
+				/>
+			</Routes>
+		</div>
 	);
 }
 

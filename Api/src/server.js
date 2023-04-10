@@ -6,14 +6,15 @@ const findAllTeclados = require('./controllers/findAllTeclados');
 const findTecladoById = require('./controllers/findTecladoById');
 const findAllMotherboards = require('./controllers/findAllMotherboards');
 const findAllMouses = require('./controllers/findAllMouses');
-// const deleteMotherboards = require('./controllers/deleteMotherboards');
 const cors = require('cors');
 const findMotherboardById = require('./controllers/findMotherboardById');
 const findMousesById = require('./controllers/findMouseById');
 const findOtherById = require('./controllers/findOtherById');
 const findAllOther = require('./controllers/findAllOther');
 const createOther = require('./controllers/createOther');
-
+const deleteMotherboards = require('./controllers/deleteMotherboards');
+const deleteOthers = require('./controllers/deleteOthers');
+const deleteTeclado = require('./controllers/deleteTeclados');
 const server = express();
 
 server.use(cors());
@@ -249,13 +250,45 @@ server.post('/teclados', async (req, res) => {
 	}
 });
 
-// server.delete("/motherboards/:id", async (req, res) => {
-// 	const { id } = req.params;
-// 	try {
-// 	  const deleteMotherboards = await deleteMotherboards(id);
-// 	  res.status(200).json(deleteMotherboards);
-// 	} catch (error) {
-// 	  res.status(400).json({ error: error.message });
-// 	}
-//   });
+server.delete('/motherboard/:id', async (req, res) => {
+	const { id } = req.params;
+	try {
+		const deleteMotherboard = await deleteMotherboards(id);
+		res.status(200).json(deleteMotherboard);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+});
+
+server.delete('/mouse/:id', async (req, res) => {
+	const { id } = req.params;
+	try {
+		const deletemouse = await deleteMouses(id);
+		res.status(200).json(deletemouse);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+});
+
+server.delete('/teclado/:id', async (req, res) => {
+	const { id } = req.params;
+	try {
+		const deletemouse = await deleteTeclado(id);
+		res.status(200).json(deletemouse);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+});
+
+server.delete('/other/:id', async (req, res) => {
+	const { id } = req.params;
+	try {
+		const deletemouse = await deleteOthers(id);
+		res.status(200).json(deletemouse);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+});
+
+
 module.exports = server;

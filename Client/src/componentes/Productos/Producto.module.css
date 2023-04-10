@@ -9,7 +9,7 @@
 .productos {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-	gap: 3rem 2rem;
+	gap: 4rem;
 	box-sizing: border-box;
 	align-items: center;
 	justify-content: center;

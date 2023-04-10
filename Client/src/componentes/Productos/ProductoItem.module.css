@@ -2,16 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 	border-radius: 3rem;
 }
-
 
 @media screen and (max-width: 1024px) {
 	.producto {
 		max-width: 15rem;
 	}
-	
 }
 
 .producto:hover {
@@ -27,7 +25,6 @@
 	.producto__img img {
 		width: 165px;
 	}
-	
 }
 
 .producto__footer {
@@ -47,7 +44,6 @@
 		font-size: 1rem;
 		color: #ff9900;
 	}
-	
 }
 
 .producto__footer p {
@@ -66,30 +62,16 @@
 
 .button {
 	display: flex;
-	justify-content: center;
-	gap: 1rem;
-    width: 90%;
+	justify-content: space-around;
 }
 
 .btn {
-	text-align: center;
-	padding: 10px;
-	background-color: #ff9900;
 	border: none;
-	font-size: 16px;
-	color: #fff;
-	text-decoration: none;
-	border-radius: 1rem;
-	font-family: 'Bebas Neue', cursive;
-    margin: 1rem auto;
-    width: 90%;
+	background-color: transparent;
+	border-radius: 100%;
 }
 
-Link {
-	font-size: 1rem;
-}
-
-.btn:hover {
-	background-color: #ffba52;
+.btn img {
+	width: 3.5rem;
 }
 
