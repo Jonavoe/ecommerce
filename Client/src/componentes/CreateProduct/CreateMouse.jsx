@@ -23,14 +23,23 @@ function CreateMouse() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		const password = prompt('Ingrese su contraseña añadir el producto:');
+		if (password !== '1234') {
+			alert('Añadir producto ha sido cancelada.');
+			return;
+		}
 		try {
-			const response = await fetch('https://ecommerce-production-dcb7.up.railway.app/mouses', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch(
+				'https://ecommerce-production-dcb7.up.railway.app/mouses',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				}
+			);
 			const data = await response.json();
 			console.log(data);
 			alert(`Producto ${selector} agregado correctamente`);
@@ -99,112 +108,120 @@ function CreateMouse() {
 					</select>
 				</h1>
 			</div>
-			<div>
-				<h1>Crea un {selector}</h1>
+			<div className={styles.containerForm}>
+				<div className={styles.titleForm}>
+					<h1>Crea un {selector}</h1>
+				</div>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}>
+					<label>
+						Title:
+						<input
+							type='text'
+							name='title'
+							value={formData.title}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Price:
+						<input
+							type='number'
+							name='price'
+							value={formData.price}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Image:
+						<input
+							type='text'
+							name='image'
+							value={formData.image}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Cantidad:
+						<input
+							type='number'
+							name='cantidad'
+							value={formData.cantidad}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Color:
+						<input
+							type='text'
+							name='color'
+							value={formData.color}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Cantidad de botones:
+						<input
+							type='number'
+							name='cantidadDeBotones'
+							value={formData.cantidadDeBotones}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Tipo de switch:
+						<input
+							type='text'
+							name='tipoDeSwitch'
+							value={formData.tipoDeSwitch}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Tipo de sensor:
+						<input
+							type='text'
+							name='tipoDeSensor'
+							value={formData.tipoDeSensor}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Tipo inalámbrico:
+						<input
+							type='text'
+							name='tipoInalámbrico'
+							value={formData.tipoInalámbrico}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Orientación:
+						<input
+							type='text'
+							name='orientacion'
+							value={formData.orientacion}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<button
+						className={styles.btn}
+						type='submit'>
+						Create Item
+					</button>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Title:
-					<input
-						type='text'
-						name='title'
-						value={formData.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Price:
-					<input
-						type='number'
-						name='price'
-						value={formData.price}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Image:
-					<input
-						type='text'
-						name='image'
-						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad:
-					<input
-						type='number'
-						name='cantidad'
-						value={formData.cantidad}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Color:
-					<input
-						type='text'
-						name='color'
-						value={formData.color}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad de botones:
-					<input
-						type='number'
-						name='cantidadDeBotones'
-						value={formData.cantidadDeBotones}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Tipo de switch:
-					<input
-						type='text'
-						name='tipoDeSwitch'
-						value={formData.tipoDeSwitch}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Tipo de sensor:
-					<input
-						type='text'
-						name='tipoDeSensor'
-						value={formData.tipoDeSensor}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Tipo inalámbrico:
-					<input
-						type='text'
-						name='tipoInalámbrico'
-						value={formData.tipoInalámbrico}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Orientación:
-					<input
-						type='text'
-						name='orientacion'
-						value={formData.orientacion}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<button type='submit'>Create Item</button>
-			</form>
 		</div>
 	);
 }

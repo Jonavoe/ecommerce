@@ -27,6 +27,12 @@ function CreateMotherboard() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		const password = prompt('Ingrese su contraseña añadir el producto:');
+		if (password !== '1234') {
+			alert('Añadir producto ha sido cancelada.');
+			return;
+		}
 		try {
 			const response = await fetch(
 				'https://ecommerce-production-dcb7.up.railway.app/motherboards',
@@ -106,153 +112,146 @@ function CreateMotherboard() {
 					</select>
 				</h1>
 			</div>
-			<div>
-				<h1>Crea un {selector}</h1>
+			<div className={styles.containerForm}>
+				<div className={styles.titleForm}>
+					<h1>Crea un {selector}</h1>
+				</div>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}>
+					<label>
+						Title:
+						<input
+							type='text'
+							name='title'
+							value={formData.title}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Price:
+						<input
+							type='text'
+							name='price'
+							value={formData.price}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Image:
+						<input
+							type='text'
+							name='image'
+							value={formData.image}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Cantidad:
+						<input
+							type='text'
+							name='cantidad'
+							value={formData.cantidad}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Cantidad Slot PCI-E 16x:
+						<input
+							type='text'
+							name='cantidadSlotPCIE16x'
+							value={formData.cantidadSlotPCIE16x}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Puertos SATA:
+						<input
+							type='text'
+							name='puertosSATA'
+							value={formData.puertosSATA}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Salidas HDMI:
+						<input
+							type='text'
+							name='salidasHDMI'
+							value={formData.salidasHDMI}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Cantidad Slot M.2 Totales:
+						<input
+							type='text'
+							name='cantidadSlotM2Totales'
+							value={formData.cantidadSlotM2Totales}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Placa Wi-Fi Integrada:
+						<input
+							type='text'
+							name='placaWifiIntegrada'
+							value={formData.placaWifiIntegrada}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Sistema de Conexión RGB:
+						<input
+							type='text'
+							name='sistemaConexionRGB'
+							value={formData.sistemaConexionRGB}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Placa de Red:
+						<input
+							type='text'
+							name='placaDeRed'
+							value={formData.placaDeRed}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Puertos USB 3.2 Traseros:
+						<input
+							type='text'
+							name='puertosUSB32Traseros'
+							value={formData.puertosUSB32Traseros}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Puertos USB Type-C:
+						<input
+							type='text'
+							name='puertosUSBTypeC'
+							value={formData.puertosUSBTypeC}
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						Cantidad Slot M.2 NVMe:
+						<input
+							type='text'
+							name='cantidadSlotM2NVMe'
+							value={formData.cantidadSlotM2NVMe}
+							onChange={handleChange}
+						/>
+					</label>
+					<button
+						className={styles.btn}
+						type='submit'>
+						Create Motherboard
+					</button>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<br />
-				<label>
-					Title:
-					<input
-						type='text'
-						name='title'
-						value={formData.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Price:
-					<input
-						type='text'
-						name='price'
-						value={formData.price}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Image:
-					<input
-						type='text'
-						name='image'
-						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad:
-					<input
-						type='text'
-						name='cantidad'
-						value={formData.cantidad}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad Slot PCI-E 16x:
-					<input
-						type='text'
-						name='cantidadSlotPCIE16x'
-						value={formData.cantidadSlotPCIE16x}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Puertos SATA:
-					<input
-						type='text'
-						name='puertosSATA'
-						value={formData.puertosSATA}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Salidas HDMI:
-					<input
-						type='text'
-						name='salidasHDMI'
-						value={formData.salidasHDMI}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad Slot M.2 Totales:
-					<input
-						type='text'
-						name='cantidadSlotM2Totales'
-						value={formData.cantidadSlotM2Totales}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Placa Wi-Fi Integrada:
-					<input
-						type='text'
-						name='placaWifiIntegrada'
-						value={formData.placaWifiIntegrada}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Sistema de Conexión RGB:
-					<input
-						type='text'
-						name='sistemaConexionRGB'
-						value={formData.sistemaConexionRGB}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Placa de Red:
-					<input
-						type='text'
-						name='placaDeRed'
-						value={formData.placaDeRed}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Puertos USB 3.2 Traseros:
-					<input
-						type='text'
-						name='puertosUSB32Traseros'
-						value={formData.puertosUSB32Traseros}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Puertos USB Type-C:
-					<input
-						type='text'
-						name='puertosUSBTypeC'
-						value={formData.puertosUSBTypeC}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad Slot M.2 NVMe:
-					<input
-						type='text'
-						name='cantidadSlotM2NVMe'
-						value={formData.cantidadSlotM2NVMe}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<button type='submit'>Create Motherboard</button>
-			</form>
 		</div>
 	);
 }

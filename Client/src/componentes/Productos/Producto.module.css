@@ -38,13 +38,13 @@
 }
 
 .select:focus {
-	color: #ff9900;
+	color: #ffd000;
 	outline: none;
-	border: 1px solid #ff9900;
+	border: 1px solid #ffd000;
 }
 
 .select:hover {
-	color: #ff9900;
+	color: #ffd000;
 }
 
 .option {
@@ -52,12 +52,12 @@
 }
 
 .option:checked {
-	background-color: #ff9900/30;
+	background-color: #ffd000/30;
 	border-radius: 1rem;
 	box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
 }
 
 .option:hover {
-	background-color: #ff9900 !important;
+	background-color: #ffd000 !important;
 	color: white;
 }

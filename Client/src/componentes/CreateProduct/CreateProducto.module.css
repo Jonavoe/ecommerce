@@ -18,13 +18,13 @@
 }
 
 .select:focus {
-	color: #ff9900;
+	color: #ffd000;
 	outline: none;
-	border: 1px solid #ff9900;
+	border: 1px solid #ffd000;
 }
 
 .select:hover {
-	color: #ff9900;
+	color: #ffd000;
 }
 
 .option {
@@ -32,12 +32,71 @@
 }
 
 .option:checked {
-	background-color: #ff9900/30;
+	background-color: #ffd000/30;
 	border-radius: 1rem;
 	box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
 }
 
 .option:hover {
-	background-color: #ff9900 !important;
+	background-color: #ffd000 !important;
 	color: white;
+}
+
+.containerForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.titleForm {
+	font-size: 2.4rem;
+	color: #ff9900;
+}
+.titleForm h1 {
+	margin: 0;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.4rem;
+	color: #ff9900;
+}
+/* .form label {
+	display: flex;
+	flex-direction: column;
+} */
+.form input {
+	border: 1.5px solid #ff9900;
+	margin-left: 0.2rem;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 1rem;
+	color: #ff9900;
+	width: 45vw;
+}
+.form label input:focus {
+	border: 4px solid #ffd000;
+	outline: none;
+}
+
+.btn {
+	text-align: center;
+	padding: 10px;
+	background-color: #ff9900;
+	border: none;
+	font-size: 1.6rem;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 1rem;
+	font-family: 'Bebas Neue', cursive;
+	margin: 1rem auto;
+	width: 90%;
+}
+
+.btn:hover {
+	background-color: #ffd000;
 }

@@ -111,132 +111,140 @@ function CreateTeclado() {
 					</select>
 				</h1>
 			</div>
-			<div>
-				<h1>Crea un {selector}</h1>
+			<div className={styles.containerForm}>
+				<div className={styles.titleForm}>
+					<h1>Crea un {selector}</h1>
+				</div>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}>
+					<label>
+						Title:
+						<input
+							type='text'
+							name='title'
+							value={formData.title}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Price:
+						<input
+							type='number'
+							name='price'
+							value={formData.price}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Image:
+						<input
+							type='text'
+							name='image'
+							value={formData.image}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Cantidad:
+						<input
+							type='number'
+							name='cantidad'
+							value={formData.cantidad}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Switchs:
+						<input
+							type='text'
+							name='switchs'
+							value={formData.switchs}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Teclado:
+						<input
+							type='text'
+							name='teclado'
+							value={formData.teclado}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Color:
+						<input
+							type='text'
+							name='color'
+							value={formData.color}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Mecanismo:
+						<input
+							type='text'
+							name='mecanismo'
+							value={formData.mecanismo}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Switch Específico:
+						<input
+							type='text'
+							name='switchEspecífico'
+							value={formData.switchEspecífico}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Material:
+						<input
+							type='text'
+							name='material'
+							value={formData.material}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Touchpad:
+						<input
+							type='text'
+							name='touchpad'
+							value={formData.touchpad}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Pad Numérico:
+						<input
+							type='text'
+							name='padNumerico'
+							value={formData.padNumerico}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<button
+						className={styles.btn}
+						type='submit'>
+						Create Keyboard
+					</button>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Title:
-					<input
-						type='text'
-						name='title'
-						value={formData.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Price:
-					<input
-						type='number'
-						name='price'
-						value={formData.price}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Image:
-					<input
-						type='text'
-						name='image'
-						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad:
-					<input
-						type='number'
-						name='cantidad'
-						value={formData.cantidad}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Switchs:
-					<input
-						type='text'
-						name='switchs'
-						value={formData.switchs}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Teclado:
-					<input
-						type='text'
-						name='teclado'
-						value={formData.teclado}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Color:
-					<input
-						type='text'
-						name='color'
-						value={formData.color}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Mecanismo:
-					<input
-						type='text'
-						name='mecanismo'
-						value={formData.mecanismo}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Switch Específico:
-					<input
-						type='text'
-						name='switchEspecífico'
-						value={formData.switchEspecífico}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Material:
-					<input
-						type='text'
-						name='material'
-						value={formData.material}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Touchpad:
-					<input
-						type='text'
-						name='touchpad'
-						value={formData.touchpad}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Pad Numérico:
-					<input
-						type='text'
-						name='padNumerico'
-						value={formData.padNumerico}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<button type='submit'>Create Keyboard</button>
-			</form>
 		</div>
 	);
 }

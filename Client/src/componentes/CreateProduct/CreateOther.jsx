@@ -17,14 +17,23 @@ function CreateOther() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		const password = prompt('Ingrese su contraseña añadir el producto:');
+		if (password !== '1234') {
+			alert('Añadir producto ha sido cancelada.');
+			return;
+		}
 		try {
-			const response = await fetch('https://ecommerce-production-dcb7.up.railway.app/other', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch(
+				'https://ecommerce-production-dcb7.up.railway.app/other',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				}
+			);
 			const data = await response.json();
 			console.log(data);
 			alert(`Producto ${selector} agregado correctamente`);
@@ -93,51 +102,56 @@ function CreateOther() {
 					</select>
 				</h1>
 			</div>
-			<div>
-				<h1>Crea un {selector}</h1>
+
+			<div className={styles.containerForm}>
+				<div className={styles.titleForm}>
+					<h1>Crea un {selector}</h1>
+				</div>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}>
+					<label>
+						Title:
+						<input
+							type='text'
+							name='title'
+							value={formData.title}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Price:
+						<input
+							type='number'
+							name='price'
+							value={formData.price}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Image:
+						<input
+							type='text'
+							name='image'
+							value={formData.image}
+							onChange={handleChange}
+						/>
+					</label>
+
+					<label>
+						Cantidad:
+						<input
+							type='number'
+							name='cantidad'
+							value={formData.cantidad}
+							onChange={handleChange}
+						/>
+					</label>
+					<button type='submit'>Create Item</button>
+				</form>
 			</div>
-			<form onSubmit={handleSubmit}>
-				<label>
-					Title:
-					<input
-						type='text'
-						name='title'
-						value={formData.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Price:
-					<input
-						type='number'
-						name='price'
-						value={formData.price}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Image:
-					<input
-						type='text'
-						name='image'
-						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Cantidad:
-					<input
-						type='number'
-						name='cantidad'
-						value={formData.cantidad}
-						onChange={handleChange}
-					/>
-				</label>
-				<button type='submit'>Create Item</button>
-			</form>
 		</div>
 	);
 }

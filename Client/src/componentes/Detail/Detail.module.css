@@ -29,7 +29,6 @@
 }
 @media screen and (max-width: 1024px) {
 	.detailPrincipal {
-		
 		gap: 2rem;
 	}
 }
@@ -63,7 +62,6 @@
 	color: #ff9900;
 	font-weight: bold;
 	padding: 1rem;
-	
 }
 
 @media screen and (max-width: 1024px) {
@@ -103,9 +101,13 @@
 	width: 90%;
 }
 
-@media screen and (max-width: 1024px){
+.btn:hover {
+	background-color: #ffd000;
+}
+
+@media screen and (max-width: 1024px) {
 	.btn {
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 }
 .price p {
