@@ -14,8 +14,8 @@ const findAllOther = require('./controllers/findAllOther');
 const createOther = require('./controllers/createOther');
 const deleteMotherboards = require('./controllers/deleteMotherboards');
 const deleteOthers = require('./controllers/deleteOthers');
-const deleteTeclado = require('./controllers/deleteTeclados');
 const deleteMouses = require('./controllers/deleteMouses');
+const deleteTeclado = require('./controllers/deleteTeclados');
 const server = express();
 
 server.use(cors());

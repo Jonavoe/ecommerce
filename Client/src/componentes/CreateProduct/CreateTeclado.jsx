@@ -10,10 +10,10 @@ function CreateTeclado() {
 			title: '',
 			price: 0,
 			image: '',
-			category: '',
+			category: 'teclado',
 			cantidad: 0,
 			switchs: '',
-			teclado: 'teclado',
+			teclado: '',
 			color: '',
 			mecanismo: '',
 			switchEspecífico: '',
@@ -199,7 +199,7 @@ function CreateTeclado() {
 					Switch Específico:
 					<input
 						type='text'
-						name='switchEspecifico'
+						name='mecanismo'
 						value={formData.switchEspecífico}
 						onChange={handleChange}
 					/>
