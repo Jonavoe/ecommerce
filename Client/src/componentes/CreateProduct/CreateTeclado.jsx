@@ -199,7 +199,7 @@ function CreateTeclado() {
 					Switch Específico:
 					<input
 						type='text'
-						name='mecanismo'
+						name='switchEspecífico'
 						value={formData.switchEspecífico}
 						onChange={handleChange}
 					/>
