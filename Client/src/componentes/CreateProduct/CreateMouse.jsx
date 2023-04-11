@@ -24,7 +24,7 @@ function CreateMouse() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await fetch('http://localhost:3001/mouses', {
+			const response = await fetch('https://ecommerce-production-dcb7.up.railway.app/mouses', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

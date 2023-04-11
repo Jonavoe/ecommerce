@@ -16,7 +16,7 @@ export const Motherboard = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosMotherboards = await obtenerProductos(
-				'http://localhost:3001/motherboards'
+				'ecommerce-production-dcb7.up.railway.app/motherboards'
 			);
 			setProductos(productosMotherboards);
 		};

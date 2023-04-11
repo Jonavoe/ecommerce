@@ -16,7 +16,7 @@ export const DetailMouse = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosMouse = await obtenerProductos(
-				`http://localhost:3001/mouses/${id}`
+				`https://ecommerce-production-dcb7.up.railway.app/mouses/${id}`
 			);
 			setMouse(productosMouse);
 		};

@@ -16,19 +16,19 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 	useEffect(() => {
 		const obtenerTodo = async () => {
 			const productosMotherboards = await obtenerProductos(
-				'http://localhost:3001/motherboards'
+				'https://ecommerce-production-dcb7.up.railway.app/motherboards'
 			);
 			productosMotherboards.forEach((producto) => producto.id);
 			const productosTeclados = await obtenerProductos(
-				'http://localhost:3001/teclados'
+				'https://ecommerce-production-dcb7.up.railway.app/teclados'
 			);
 			productosTeclados.forEach((producto) => producto.id);
 			const productosMouses = await obtenerProductos(
-				'http://localhost:3001/mouses'
+				'https://ecommerce-production-dcb7.up.railway.app/mouses'
 			);
 			productosMouses.forEach((producto) => producto.id);
 			const productosOther = await obtenerProductos(
-				'http://localhost:3001/other'
+				'https://ecommerce-production-dcb7.up.railway.app/other'
 			);
 			productosMouses.forEach((producto) => producto.id);
 			setProductos([

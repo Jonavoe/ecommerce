@@ -15,7 +15,7 @@ export const Teclados = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosTeclados = await obtenerProductos(
-				'http://localhost:3001/teclados'
+				'https://ecommerce-production-dcb7.up.railway.app/teclados'
 			);
 			setTeclados(productosTeclados);
 		};

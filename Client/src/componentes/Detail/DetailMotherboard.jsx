@@ -16,7 +16,7 @@ export const DetailMotherboard = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosMotherboard = await obtenerProductos(
-				`http://localhost:3001/motherboards/${id}`
+				`https://ecommerce-production-dcb7.up.railway.app/motherboards/${id}`
 			);
 			setMotherboard(productosMotherboard);
 		};

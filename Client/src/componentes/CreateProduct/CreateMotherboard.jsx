@@ -28,7 +28,7 @@ function CreateMotherboard() {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			const response = await fetch('http://localhost:3001/motherboards', {
+			const response = await fetch('https://ecommerce-production-dcb7.up.railway.app/motherboards', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

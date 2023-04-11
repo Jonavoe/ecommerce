@@ -16,7 +16,7 @@ export const DetailOther = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosOther = await obtenerProductos(
-				`http://localhost:3001/other/${id}`
+				`https://ecommerce-production-dcb7.up.railway.app/other/${id}`
 			);
 			setOther(productosOther);
 		};
