@@ -264,8 +264,8 @@ server.delete('/motherboard/:id', async (req, res) => {
 server.delete('/mouse/:id', async (req, res) => {
 	const { id } = req.params;
 	try {
-		const deletemouse = await deleteMouses(id);
-		res.status(200).json(deletemouse);
+		const deleteMouse = await deleteMouses(id);
+		res.status(200).json(deleteMouse);
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}
@@ -274,8 +274,8 @@ server.delete('/mouse/:id', async (req, res) => {
 server.delete('/teclado/:id', async (req, res) => {
 	const { id } = req.params;
 	try {
-		const deletemouse = await deleteTeclado(id);
-		res.status(200).json(deletemouse);
+		const deletTeclado = await deleteTeclado(id);
+		res.status(200).json(deletTeclado);
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}
