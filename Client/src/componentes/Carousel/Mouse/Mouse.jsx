@@ -15,7 +15,7 @@ export const Mouse = () => {
 	useEffect(() => {
 		const fetchProductos = async () => {
 			const productosMouses = await obtenerProductos(
-				'ecommerce-production-dcb7.up.railway.app/mouses'
+				'https://ecommerce-production-dcb7.up.railway.app/mouses'
 			);
 			setMouses(productosMouses);
 		};

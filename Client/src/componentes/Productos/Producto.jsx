@@ -42,7 +42,7 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 	}, []);
 
 	const eliminarProducto = async (id, category) => {
-		const url = `http://localhost:3001/${category}/${id}`;
+		const url = `https://ecommerce-production-dcb7.up.railway.app//${category}/${id}`;
 		try {
 			const response = await fetch(url, {
 				method: 'DELETE',

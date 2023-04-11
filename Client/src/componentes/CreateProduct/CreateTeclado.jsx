@@ -25,14 +25,24 @@ function CreateTeclado() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+
+		const password = prompt('Ingrese su contraseña añadir el producto:');
+		if (password !== '1234') {
+			alert('Añadir producto ha sido cancelada.');
+			return;
+		}
+
 		try {
-			const response = await fetch('https://ecommerce-production-dcb7.up.railway.app/teclados', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			});
+			const response = await fetch(
+				'https://ecommerce-production-dcb7.up.railway.app/teclados',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				}
+			);
 			const data = await response.json();
 			console.log(data);
 			alert(`Producto ${selector} agregado correctamente`);
