@@ -10,7 +10,7 @@ function CreateMotherboard() {
 			title: '',
 			price: 0,
 			image: '',
-			category: '',
+			category: 'motherboard',
 			cantidad: 0,
 			cantidadSlotPCIE16x: 0,
 			puertosSATA: 0,
@@ -139,18 +139,6 @@ function CreateMotherboard() {
 						value={formData.image}
 						onChange={handleChange}
 					/>
-				</label>
-				<br />
-				<label>
-					Category:
-					<select
-						name='category'
-						value={formData.category}>
-						<option>motherboard</option>
-						<option>mouse</option>
-						<option>teclado</option>
-						<option>other</option>
-					</select>
 				</label>
 				<br />
 				<label>

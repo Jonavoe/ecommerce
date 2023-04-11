@@ -10,7 +10,7 @@ function CreateOther() {
 			title: '',
 			price: 0,
 			image: '',
-			category: '',
+			category: 'other',
 			cantidad: 0,
 		};
 	}
@@ -123,16 +123,6 @@ function CreateOther() {
 						type='text'
 						name='image'
 						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Category:
-					<input
-						type='text'
-						name='category'
-						value={formData.category}
 						onChange={handleChange}
 					/>
 				</label>

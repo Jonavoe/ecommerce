@@ -13,7 +13,7 @@ function CreateTeclado() {
 			category: '',
 			cantidad: 0,
 			switchs: '',
-			teclado: '',
+			teclado: 'teclado',
 			color: '',
 			mecanismo: '',
 			switchEspecífico: '',
@@ -141,16 +141,6 @@ function CreateTeclado() {
 						type='text'
 						name='image'
 						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Category:
-					<input
-						type='text'
-						name='category'
-						value={formData.category}
 						onChange={handleChange}
 					/>
 				</label>

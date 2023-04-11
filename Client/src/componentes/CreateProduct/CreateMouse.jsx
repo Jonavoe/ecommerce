@@ -10,7 +10,7 @@ function CreateMouse() {
 			title: '',
 			price: 0,
 			image: '',
-			category: '',
+			category: 'mouse',
 			cantidad: 0,
 			color: '',
 			cantidadDeBotones: 0,
@@ -129,16 +129,6 @@ function CreateMouse() {
 						type='text'
 						name='image'
 						value={formData.image}
-						onChange={handleChange}
-					/>
-				</label>
-				<br />
-				<label>
-					Category:
-					<input
-						type='text'
-						name='category'
-						value={formData.category}
 						onChange={handleChange}
 					/>
 				</label>
