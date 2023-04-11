@@ -54,6 +54,10 @@ export const Teclados = () => {
 									alt={item.title}
 								/>
 							</Link>
+							<div className='title'>
+								<p>{item.title}</p>
+								<p>${item.price}</p>
+							</div>
 						</div>
 					))}
 				</Slider>

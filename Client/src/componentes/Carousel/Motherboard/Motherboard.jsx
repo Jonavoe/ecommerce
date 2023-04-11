@@ -24,8 +24,6 @@ export const Motherboard = () => {
 	}, []);
 
 	let settings = {
-		centerMode: true,
-		centerPadding:'200px',
 		infinite: true,
 		slidesToShow: 3,
 		speed: 6000,
@@ -63,6 +61,10 @@ export const Motherboard = () => {
 									alt={item.title}
 								/>
 							</Link>
+							<div className='title'>
+								<p>{item.title}</p>
+								<p>${item.price}</p>
+							</div>
 						</div>
 					))}
 				</Slider>

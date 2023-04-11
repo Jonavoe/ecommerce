@@ -32,10 +32,14 @@
 	left: 4rem;
 }
 
+.slick-center {
+	text-align: center;
+}
+
 .slick-list {
 	top: 1rem;
 	width: 100rem;
-	height: 16rem;
+	height: 22rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -55,3 +59,12 @@
 	color: #ff9900;
 	font-size: 30px;
 } */
+
+.title {
+	display: flex;
+	flex-direction: column;
+}
+.title p {
+	margin: 0;
+	padding: 0;
+}
