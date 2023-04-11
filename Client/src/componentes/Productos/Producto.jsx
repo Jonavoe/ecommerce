@@ -70,7 +70,7 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 
 	if (selector === 'Teclados') {
 		productosFiltrados = productos.filter(
-			(producto) => producto.category === 'teclados'
+			(producto) => producto.category === 'teclado'
 		);
 	} else if (selector === 'Motherboard') {
 		productosFiltrados = productos.filter(
@@ -79,6 +79,10 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 	} else if (selector === 'Mouse') {
 		productosFiltrados = productos.filter(
 			(producto) => producto.category === 'mouse'
+		);
+	} else if (selector === 'Other') {
+		productosFiltrados = productos.filter(
+			(producto) => producto.category === 'other'
 		);
 	}
 
@@ -109,6 +113,11 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 							className={styles.option}
 							value='Mouse'>
 							Mouse
+						</option>
+						<option
+							className={styles.option}
+							value='Other'>
+							Other
 						</option>
 					</select>
 				</h1>
