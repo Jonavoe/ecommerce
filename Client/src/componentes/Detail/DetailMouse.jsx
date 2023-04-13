@@ -2,7 +2,13 @@ import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
 import { useEffect, useState } from 'react';
 
-export const DetailMouse = () => {
+export const DetailMouse = ({ 
+	agregarAlCarrito,
+	title,
+	price,
+	image,
+	category,
+	cantidad, }) => {
 	const { id } = useParams();
 
 	const [mouse, setMouse] = useState([]);
@@ -24,8 +30,8 @@ export const DetailMouse = () => {
 	}, [id]);
 
 	const addCarrito = () => {
-		console.log('agregar carrito');
-	}
+		agregarAlCarrito({ id, title, price, image, category, cantidad });
+	};
 
 	return (
 		<div className={styles.containerDetail}>

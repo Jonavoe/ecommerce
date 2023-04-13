@@ -70,7 +70,7 @@ export const ProductoLista = ({ agregarAlCarrito }) => {
 
 	if (selector === 'Teclados') {
 		productosFiltrados = productos.filter(
-			(producto) => producto.category === 'teclado'
+			(producto) => producto.category === 'teclados'
 		);
 	} else if (selector === 'Motherboard') {
 		productosFiltrados = productos.filter(

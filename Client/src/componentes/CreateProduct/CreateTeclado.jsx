@@ -10,7 +10,7 @@ function CreateTeclado() {
 			title: '',
 			price: 0,
 			image: '',
-			category: 'teclado',
+			category: 'teclados',
 			cantidad: 0,
 			switchs: '',
 			teclado: '',

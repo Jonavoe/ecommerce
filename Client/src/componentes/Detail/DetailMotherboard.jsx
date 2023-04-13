@@ -2,7 +2,13 @@ import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
 import { useEffect, useState } from 'react';
 
-export const DetailMotherboard = () => {
+export const DetailMotherboard = ( {
+	agregarAlCarrito,
+	title,
+	price,
+	image,
+	category,
+	cantidad, }) => {
 	const { id } = useParams();
 
 	const [motherboard, setMotherboard] = useState([]);
@@ -23,7 +29,7 @@ export const DetailMotherboard = () => {
 		fetchProductos();
 	}, [id]);
 	const addCarrito = () => {
-		console.log('agregar carrito');
+		agregarAlCarrito({ id, title, price, image, category, cantidad });
 	};
 
 	return (

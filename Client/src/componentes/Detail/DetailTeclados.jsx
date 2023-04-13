@@ -2,7 +2,14 @@ import { useParams } from 'react-router-dom';
 import styles from './Detail.module.css';
 import { useEffect, useState } from 'react';
 
-export const DetailTeclados = () => {
+export const DetailTeclados = ({
+	agregarAlCarrito,
+	title,
+	price,
+	image,
+	category,
+	cantidad,
+}) => {
 	const { id } = useParams();
 	const [teclados, setTeclados] = useState([]);
 
@@ -23,8 +30,9 @@ export const DetailTeclados = () => {
 	}, [id]);
 
 	const addCarrito = () => {
-		console.log('agregar carrito');
+		agregarAlCarrito({ id, title, price, image, category, cantidad });
 	};
+	
 	return (
 		<div className={styles.containerDetail}>
 			<div className={styles.detail}>

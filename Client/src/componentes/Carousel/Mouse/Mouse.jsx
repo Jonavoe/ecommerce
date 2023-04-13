@@ -24,7 +24,7 @@ export const Mouse = () => {
 
 	let settings = {
 		infinite: true,
-		slidesToShow: 2,
+		slidesToShow: 3,
 		speed: 6000,
 		slidesToScroll: 1,
 		autoplay: true,

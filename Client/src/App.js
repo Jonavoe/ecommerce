@@ -68,19 +68,23 @@ function App() {
 				/>
 				<Route
 					path='/teclados/:id'
-					element={<DetailTeclados />}
+					element={<DetailTeclados 
+						agregarAlCarrito={agregarAlCarrito} />}
 				/>
 				<Route
 					path='/motherboard/:id'
-					element={<DetailMotherboard />}
+					element={<DetailMotherboard 
+						agregarAlCarrito={agregarAlCarrito} />}
 				/>
 				<Route
 					path='/mouse/:id'
-					element={<DetailMouse />}
+					element={<DetailMouse 
+						agregarAlCarrito={agregarAlCarrito} />}
 				/>
 				<Route
 					path='/other/:id'
-					element={<DetailOther />}
+					element={<DetailOther 
+						agregarAlCarrito={agregarAlCarrito}/>}
 				/>
 			</Routes>
 		</div>
