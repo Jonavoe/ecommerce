@@ -6,7 +6,6 @@ const findAllTeclados = require('./controllers/findAllTeclados');
 const findTecladoById = require('./controllers/findTecladoById');
 const findAllMotherboards = require('./controllers/findAllMotherboards');
 const findAllMouses = require('./controllers/findAllMouses');
-const cors = require('cors');
 const findMotherboardById = require('./controllers/findMotherboardById');
 const findMousesById = require('./controllers/findMouseById');
 const findOtherById = require('./controllers/findOtherById');
@@ -16,6 +15,7 @@ const deleteMotherboards = require('./controllers/deleteMotherboards');
 const deleteOthers = require('./controllers/deleteOthers');
 const deleteMouses = require('./controllers/deleteMouses');
 const deleteTeclado = require('./controllers/deleteTeclados');
+const cors = require('cors');
 const server = express();
 
 server.use(cors());
