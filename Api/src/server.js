@@ -22,7 +22,7 @@ const allowedOrigins = [
 	'http://localhost:3000',
 	'https://ecommerce-jonavoe.vercel.app/',
 ];
-app.use(
+server.use(
 	cors({
 		origin: allowedOrigins,
 	})
