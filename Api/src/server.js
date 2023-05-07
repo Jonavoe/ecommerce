@@ -18,13 +18,9 @@ const deleteTeclado = require('./controllers/deleteTeclados');
 const cors = require('cors');
 const server = express();
 
-const allowedOrigins = [
-	'http://localhost:3000',
-	'https://ecommerce-jonavoe.vercel.app/',
-];
 server.use(
 	cors({
-		origin: allowedOrigins,
+		origin: '*',
 	})
 );
 
