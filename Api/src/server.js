@@ -18,11 +18,7 @@ const deleteTeclado = require('./controllers/deleteTeclados');
 const cors = require('cors');
 const server = express();
 
-server.use(
-	cors({
-		origin: '*',
-	})
-);
+server.use(cors());
 
 server.use(express.json());
 
@@ -294,5 +290,6 @@ server.delete('/other/:id', async (req, res) => {
 		res.status(400).json({ error: error.message });
 	}
 });
+
 
 module.exports = server;
