@@ -1,28 +1,27 @@
-# Ecommerce
+# Ecommerce Client
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Ecommerce es una aplicación web desarrollada con React para gestionar una tienda en línea. Permite a los usuarios navegar por productos, realizar compras y gestionar su carrito de manera eficiente. La aplicación también ofrece una interfaz intuitiva para los administradores para gestionar productos y pedidos.
+El cliente de Ecommerce es la interfaz de usuario desarrollada con React para la gestión de una tienda en línea. Permite a los usuarios navegar por productos, realizar compras, gestionar su carrito y completar el proceso de pago de manera intuitiva y eficiente.
 
 ## Demo
 
-Puedes ver la aplicación en funcionamiento aquí: [Ecommerce](https://ecommerce-jonavoe.vercel.app/)
+Puedes ver la aplicación en funcionamiento aquí: [Ecommerce Client](https://ecommerce-jonavoe.vercel.app/)
 
 ## Características
 
-- **Navegación de productos**: Los usuarios pueden explorar una amplia gama de productos con opciones de filtrado y búsqueda.
-- **Gestión del carrito**: Permite a los usuarios agregar, eliminar y actualizar productos en su carrito de compras.
-- **Proceso de pago**: Facilita la realización de pagos de manera segura y eficiente.
-- **Panel de administración**: Ofrece herramientas para que los administradores gestionen productos, pedidos y usuarios.
-- **Responsive**: Optimizado para una experiencia fluida en dispositivos móviles y de escritorio.
+- **Navegación de productos**: Explora una amplia gama de productos con opciones de filtrado y búsqueda.
+- **Gestión del carrito**: Agrega, elimina y actualiza productos en el carrito de compras.
+- **Proceso de pago**: Realiza pagos de manera segura y eficiente.
+- **Interfaz amigable**: Diseñada para ofrecer una experiencia de usuario fluida en dispositivos móviles y de escritorio.
+- **Autenticación y registro**: Permite a los usuarios crear cuentas y gestionar su información personal.
 
 ## Tecnologías utilizadas
 
 - **React**: Biblioteca de JavaScript para construir la interfaz de usuario.
-- **Node.js**: Plataforma de servidor para manejar la lógica de backend.
-- **Express.js**: Framework de Node.js para construir APIs y gestionar solicitudes.
-- **MongoDB**: Base de datos NoSQL para almacenar información de productos y pedidos.
-- **Stripe**: Servicio para manejar pagos en línea.
+- **Redux**: Biblioteca para manejar el estado global de la aplicación.
+- **CSS Modules**: Estilos CSS locales para mantener el código modular y mantenible.
+- **Axios**: Biblioteca para realizar solicitudes HTTP al backend.
 
 ## Instalación
 
@@ -31,26 +30,25 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/Jonavoe/ecommerce.git
-   Navega al directorio del proyecto:
-   bash
-   Copiar código
-   cd ecommerce
-   Instala las dependencias:
-   bash
-   Copiar código
-   npm install
-   Inicia la aplicación:
-   bash
-   Copiar código
-   npm start
-   La aplicación debería estar corriendo en http://localhost:3000.
-   ```
+Navega al directorio del cliente:
+bash
+Copiar código
+cd ecommerce/Client
+Instala las dependencias:
+bash
+Copiar código
+npm install
+Inicia la aplicación:
+bash
+Copiar código
+npm start
+La aplicación debería estar corriendo en http://localhost:3000.
 
 Despliegue
-Este proyecto está desplegado en Vercel (o la plataforma que uses). Para desplegar tu propia versión:
+Este proyecto está desplegado en Vercel. Para desplegar tu propia versión:
 
 Haz un fork de este repositorio.
-Vincula tu repositorio con Vercel (o la plataforma que uses).
+Vincula tu repositorio con Vercel.
 Configura las variables de entorno si es necesario.
 Despliega tu aplicación con un solo clic.
 Contribuciones
