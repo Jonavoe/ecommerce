@@ -6,7 +6,7 @@ Ecommerce es una aplicación web desarrollada con React para gestionar una tiend
 
 ## Demo
 
-Puedes ver la aplicación en funcionamiento aquí: [Ecommerce](https://tu-url-de-demo-aqui.com)
+Puedes ver la aplicación en funcionamiento aquí: [Ecommerce](https://ecommerce-jonavoe.vercel.app/)
 
 ## Características
 
