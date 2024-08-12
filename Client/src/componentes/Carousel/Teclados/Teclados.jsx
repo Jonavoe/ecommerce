@@ -25,10 +25,10 @@ export const Teclados = () => {
   let settings = {
     infinite: true,
     slidesToShow: 3,
-    speed: 6000,
+    speed: 500,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     rtl: true,
     responsive: [
       {
@@ -41,6 +41,7 @@ export const Teclados = () => {
       },
     ],
   };
+
   return (
     <div className="carouselContainer">
       <h1 className="title">Teclados</h1>

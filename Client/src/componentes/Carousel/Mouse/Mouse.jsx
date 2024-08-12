@@ -25,10 +25,11 @@ export const Mouse = () => {
   let settings = {
     infinite: true,
     slidesToShow: 3,
-    speed: 6000,
+    speed: 500,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
+    rtl: true,
     responsive: [
       {
         breakpoint: 768,
@@ -40,6 +41,7 @@ export const Mouse = () => {
       },
     ],
   };
+  
   return (
     <div className="carouselContainer">
       <h1 className="title">Mouse</h1>
